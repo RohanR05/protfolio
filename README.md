@@ -1,12 +1,40 @@
-# React + Vite
+# Rohan Kabir – Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal portfolio repository! 🚀 This project showcases my skills, education, and projects as a passionate web developer.
 
-Currently, two official plugins are available:
+## About Me
+Hi! I’m **Rohan Kabir**, a dedicated and enthusiastic Web Developer skilled in:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Tech Stack
+<img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white&style=flat-square" />
+<img src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white&style=flat-square" />
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black&style=flat-square" />
+<img src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black&style=flat-square" />
+<img src="https://img.shields.io/badge/TailwindCSS-38B2AC?logo=tailwind-css&logoColor=white&style=flat-square" />
+<img src="https://img.shields.io/badge/DaisyUI-3AF6C6?logo=daisyui&logoColor=white&style=flat-square" />
 
-## Expanding the ESLint configuration
+### Education
+- SSC (Science) – Sammilani Secondary School, Chalitatala  
+- HSC (Science) – Abdul Hig Cite College  
+- BBA – National University (Ongoing)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Portfolio Sections
+- [Home](#)  
+- [About](#)  
+- [Education](#)  
+- [Projects](#)  
+- [Contact](#)  
+
+## Features
+- Smooth scrolling navigation  
+- Responsive & mobile-friendly  
+- Modern UI with animations
+
+## Contact
+- Email: rohankabir061@gmail.com  
+- GitHub: [RohanR05](https://github.com/RohanR05)  
+- LinkedIn: [rohan-batman](https://www.linkedin.com/in/rohan-batman/)  
+
+---
+
+*This portfolio reflects my journey as a web developer. I’m committed to continuous learning and building impactful web apps.*  
