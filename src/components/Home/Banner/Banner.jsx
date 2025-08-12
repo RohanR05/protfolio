@@ -30,7 +30,7 @@ const Banner = () => {
           UI ✨ and efficient backend architecture ⚡.
         </p>
         <a href="
-        https://docs.google.com/document/d/1oQzn6bXB0g_AulOqvlK8RSG0e58VKB1XXZ-_etP8VC4/edit?usp=sharing"
+       https://drive.google.com/file/d/180oEGkCsjBwAmAoht8vH36QYI19XcP4M/view?usp=sharing"
           // add your resume link here
           target="_blank"
           rel="noopener noreferrer"
