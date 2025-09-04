@@ -89,7 +89,7 @@ const Navbar = () => {
         {/* Resume button */}
         <div className="navbar-end">
           <a
-            href="https://drive.google.com/file/d/180oEGkCsjBwAmAoht8vH36QYI19XcP4M/view?usp=sharing" // add your resume link here
+            href="https://drive.google.com/file/d/1yU7E7iaix95LZPkxLxezswyAHR0KTb_i/view?usp=sharing" // add your resume link here
             target="_blank"
             rel="noopener noreferrer"
             className="btn hidden md:inline-block bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:from-indigo-600 hover:to-purple-600 transition duration-300"
