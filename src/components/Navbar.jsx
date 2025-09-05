@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="navbar bg-primary shadow-sm text-secondary fixed top-0 z-10 ">
+      <div className="navbar bg-[#24583C] shadow-sm text-white fixed top-0 z-10 ">
         <div className="navbar-start">
           {/* Hamburger dropdown for small screens */}
           <div className="dropdown lg:hidden">
@@ -50,7 +50,7 @@ const Navbar = () => {
           </div>
 
           {/* Brand */}
-          <a className="text-xl font-extrabold uppercase px-6 py-3 cursor-pointer">
+          <a className="text-xl font-extrabold uppercase px-6 py-3 cursor-pointer hidden md:inline-block">
             Marn
             <span className="text-yellow-400 text-2xl mx-2">Stack</span>
             Developer
@@ -63,7 +63,7 @@ const Navbar = () => {
             <li>
               <button
                 onClick={() => handleScroll("about")}
-                className="btn btn-ghost text-secondary"
+                className="btn btn-ghost text-white"
               >
                 About
               </button>
@@ -71,7 +71,7 @@ const Navbar = () => {
             <li>
               <button
                 onClick={() => handleScroll("projects")}
-                className="btn btn-ghost text-secondary"
+                className="btn btn-ghost text-white"
               >
                 Projects
               </button>
@@ -79,7 +79,7 @@ const Navbar = () => {
             <li>
               <button
                 onClick={() => handleScroll("contact")}
-                className="btn btn-ghost text-secondary"
+                className="btn btn-ghost text-white"
               >
                 Contact
               </button>
@@ -89,7 +89,10 @@ const Navbar = () => {
 
         {/* Resume button */}
         <div className="navbar-end">
-          <Theme></Theme>
+          <div className="mr-2">
+            {" "}
+            <Theme></Theme>
+          </div>
           <a
             href="
        https://drive.google.com/file/d/180oEGkCsjBwAmAoht8vH36QYI19XcP4M/view?usp=sharing"

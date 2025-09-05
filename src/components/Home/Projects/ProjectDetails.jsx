@@ -81,10 +81,12 @@ const ProjectDetails = () => {
   if (!project) {
     return (
       <div className="p-8 max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-4">Project Not Found</h2>
+        <h2 className="text-3xl font-bold mb-4 text-primary">
+          Project Not Found
+        </h2>
         <Link
           to="/projects"
-          className="text-blue-600 underline hover:text-blue-800"
+          className="text-primary underline hover:text-primary/80"
         >
           Back to Projects
         </Link>
@@ -93,8 +95,8 @@ const ProjectDetails = () => {
   }
 
   return (
-    <section className="max-w-4xl mx-auto p-8 bg-white rounded shadow mt-10">
-      <h1 className="text-4xl font-bold mb-6">{project.name}</h1>
+    <section className="max-w-4xl mx-auto p-8 bg-secondary rounded-lg shadow mt-10">
+      <h1 className="text-4xl font-bold mb-6 text-primary">{project.name}</h1>
 
       <img
         src={project.image}
@@ -102,9 +104,11 @@ const ProjectDetails = () => {
         className="w-full h-64 object-cover rounded mb-6"
       />
 
-      <p className="mb-6 text-lg">{project.description}</p>
+      <p className="mb-6 text-lg text-primary">{project.description}</p>
 
-      <h3 className="text-2xl font-semibold mb-2">🛠 Main Tech Stack:</h3>
+      <h3 className="text-2xl font-semibold mb-2 text-primary">
+        🛠 Main Tech Stack:
+      </h3>
       <div className="flex flex-wrap gap-2 mb-6">
         {project.techStack.map((tech) => (
           <img
@@ -117,15 +121,19 @@ const ProjectDetails = () => {
         ))}
       </div>
 
-      <h3 className="text-2xl font-semibold mb-2">⚠ Challenges Faced:</h3>
-      <ul className="list-disc list-inside mb-6">
+      <h3 className="text-2xl font-semibold mb-2 text-primary">
+        ⚠ Challenges Faced:
+      </h3>
+      <ul className="list-disc list-inside mb-6 text-primary">
         {project.challenges.map((ch, i) => (
           <li key={i}>{ch}</li>
         ))}
       </ul>
 
-      <h3 className="text-2xl font-semibold mb-2">🔮 Potential Improvements:</h3>
-      <ul className="list-disc list-inside mb-6">
+      <h3 className="text-2xl font-semibold mb-2 text-primary">
+        🔮 Potential Improvements:
+      </h3>
+      <ul className="list-disc list-inside mb-6 text-primary">
         {project.improvements.map((imp, i) => (
           <li key={i}>{imp}</li>
         ))}
@@ -136,7 +144,7 @@ const ProjectDetails = () => {
           href={project.liveLink}
           target="_blank"
           rel="noreferrer"
-          className="bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 transition"
+          className="bg-primary text-secondary px-5 py-2 rounded hover:bg-primary/80 transition font-semibold"
         >
           Live Project
         </a>
@@ -144,7 +152,7 @@ const ProjectDetails = () => {
           href={project.githubClient}
           target="_blank"
           rel="noreferrer"
-          className="bg-gray-800 text-white px-5 py-2 rounded hover:bg-gray-900 transition"
+          className="bg-base-100 text-primary px-5 py-2 rounded border border-primary hover:bg-primary hover:text-secondary transition font-semibold"
         >
           GitHub Repo (Client)
         </a>
@@ -152,7 +160,7 @@ const ProjectDetails = () => {
 
       <Link
         to="/"
-        className="inline-block mt-8 text-blue-600 underline hover:text-blue-800"
+        className="inline-block mt-8 text-primary underline hover:text-primary/80"
       >
         ← Back to Projects
       </Link>

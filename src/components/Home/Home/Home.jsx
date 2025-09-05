@@ -25,7 +25,7 @@ const SectionWrapper = ({ children, animation }) => {
 
 const Home = () => {
   return (
-    <div className="my-16 m-1">
+    <div className="my-8 md:my-16 m-1">
       {/* Banner - Slide from Top */}
       <SectionWrapper
         animation={{
