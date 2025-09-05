@@ -1,4 +1,5 @@
 import React from "react";
+import Theme from "./Theme";
 
 const Navbar = () => {
   const handleScroll = (sectionId) => {
@@ -10,7 +11,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="navbar bg-[#24583C] shadow-sm text-white fixed top-0 z-10 ">
+      <div className="navbar bg-primary shadow-sm text-secondary fixed top-0 z-10 ">
         <div className="navbar-start">
           {/* Hamburger dropdown for small screens */}
           <div className="dropdown lg:hidden">
@@ -32,7 +33,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-[#24583C] rounded-box w-52 text-white"
+              className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-secondary rounded-box w-52 text-primary"
             >
               <li>
                 <button onClick={() => handleScroll("about")}>About</button>
@@ -62,7 +63,7 @@ const Navbar = () => {
             <li>
               <button
                 onClick={() => handleScroll("about")}
-                className="btn btn-ghost text-white"
+                className="btn btn-ghost text-secondary"
               >
                 About
               </button>
@@ -70,7 +71,7 @@ const Navbar = () => {
             <li>
               <button
                 onClick={() => handleScroll("projects")}
-                className="btn btn-ghost text-white"
+                className="btn btn-ghost text-secondary"
               >
                 Projects
               </button>
@@ -78,7 +79,7 @@ const Navbar = () => {
             <li>
               <button
                 onClick={() => handleScroll("contact")}
-                className="btn btn-ghost text-white"
+                className="btn btn-ghost text-secondary"
               >
                 Contact
               </button>
@@ -88,11 +89,14 @@ const Navbar = () => {
 
         {/* Resume button */}
         <div className="navbar-end">
+          <Theme></Theme>
           <a
-            href="https://drive.google.com/file/d/1yU7E7iaix95LZPkxLxezswyAHR0KTb_i/view?usp=sharing" // add your resume link here
+            href="
+       https://drive.google.com/file/d/180oEGkCsjBwAmAoht8vH36QYI19XcP4M/view?usp=sharing"
+            // add your resume link here
             target="_blank"
             rel="noopener noreferrer"
-            className="btn hidden md:inline-block bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:from-indigo-600 hover:to-purple-600 transition duration-300"
+            className="btn border-white hidden md:inline-block  bg-gradient-to-r from-[#051622] to-[#24583C] text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:from-[#24583C] hover:to-[#051622] transition duration-300"
           >
             Resume
           </a>

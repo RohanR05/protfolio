@@ -63,13 +63,15 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section className=" py-10 max-w-7xl mx-auto">
-      <h2 className="text-3xl font-bold text-center mb-10">🚀 My Projects</h2>
-      <div className="grid gap-8 lg:grid-cols-3 sm:grid-cols-1">
+    <section className=" py-10 max-w-7xl mx-auto bg-secondary my-16">
+      <h2 className="text-3xl text-primary font-bold text-center mb-10">
+        🚀 My Projects
+      </h2>
+      <div className="grid gap-8 lg:grid-cols-3 sm:grid-cols-1 mx-2">
         {projects.map((project) => (
           <div
             key={project.id}
-            className="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col"
+            className="bg-base-100 shadow-lg rounded-lg overflow-hidden flex flex-col"
           >
             <img
               src={project.image}
@@ -78,7 +80,7 @@ const Projects = () => {
             />
             <div className="p-5 flex flex-col flex-grow">
               <h3 className="text-xl font-bold mb-2">{project.name}</h3>
-              <p className="mb-3 text-gray-700 flex-grow line-clamp-3">
+              <p className="mb-3 text-primary flex-grow line-clamp-3">
                 {project.description}
               </p>
 
@@ -87,16 +89,15 @@ const Projects = () => {
                 {project.techStack.map((tech, i) => (
                   <span
                     key={i}
-                    className="bg-green-200 text-green-800 px-2 py-1 rounded text-sm font-medium"
+                    className="bg-primary text-secondary px-2 py-1 rounded text-sm font-medium"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
-
               <Link
                 to={`/projects/${project.id}`}
-                className="mt-auto bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition text-center"
+                className="mt-auto bg-secondary px-4 py-2 rounded-lg hover:bg-primary/40 transition-colors duration-300 text-center text-primary font-medium"
               >
                 View Details
               </Link>
