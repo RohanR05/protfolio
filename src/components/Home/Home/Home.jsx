@@ -7,8 +7,30 @@ import Contact from "../Contact/Contact";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
+// Hook to check if screen is small (sm breakpoint)
+const useIsSmallScreen = () => {
+  const [isSmall, setIsSmall] = React.useState(false);
+
+  React.useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)"); // sm breakpoint in Tailwind
+    setIsSmall(mq.matches);
+
+    const handler = (e) => setIsSmall(e.matches);
+    mq.addEventListener("change", handler);
+
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+
+  return isSmall;
+};
+
 const SectionWrapper = ({ children, animation }) => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
+  const isSmall = useIsSmallScreen();
+
+  if (isSmall) {
+    return <div ref={ref}>{children}</div>; // ❌ No animation on small screens
+  }
 
   return (
     <motion.div
@@ -26,7 +48,6 @@ const SectionWrapper = ({ children, animation }) => {
 const Home = () => {
   return (
     <div className="my-8 md:my-16 m-1">
-      {/* Banner - Slide from Top */}
       <SectionWrapper
         animation={{
           hidden: { y: -50, opacity: 0 },
@@ -36,7 +57,6 @@ const Home = () => {
         <Banner />
       </SectionWrapper>
 
-      {/* About - Slide from Left */}
       <div id="about">
         <SectionWrapper
           animation={{
@@ -48,7 +68,6 @@ const Home = () => {
         </SectionWrapper>
       </div>
 
-      {/* Education - Fade In */}
       <SectionWrapper
         animation={{
           hidden: { opacity: 0 },
@@ -58,7 +77,6 @@ const Home = () => {
         <Education />
       </SectionWrapper>
 
-      {/* Projects - Slide from Right */}
       <div id="projects">
         <SectionWrapper
           animation={{
@@ -70,7 +88,6 @@ const Home = () => {
         </SectionWrapper>
       </div>
 
-      {/* Contact - Scale Up */}
       <div id="contact">
         <SectionWrapper
           animation={{

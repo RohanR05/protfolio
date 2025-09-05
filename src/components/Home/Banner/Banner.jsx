@@ -6,7 +6,7 @@ const Banner = () => {
       {/* Image */}
       <div className="flex-shrink-0 mb-6 md:mb-0">
         <img
-          className="w-48 h-48 md:w-72 md:h-74 object-cover rounded-full border-4 border-white shadow-lg"
+          className="w-48 h-48 md:w-72 md:h-74 object-cover rounded-full border-4 border-primary shadow-lg"
           src={img}
           alt="Profile"
         />
@@ -25,7 +25,7 @@ const Banner = () => {
         <p className="text-2xl md:text-3xl font-semibold text-yellow-400 mb-3">
           💻 MERN Stack Developer 🚀
         </p>
-        <p className="text-lg text-secondary">
+        <p className="text-lg">
           Passionate about building modern, scalable web applications with clean
           UI ✨ and efficient backend architecture ⚡.
         </p>
