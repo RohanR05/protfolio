@@ -9,9 +9,39 @@ const Navbar = () => {
     }
   };
 
+  const links = (
+    <>
+      {" "}
+      <li>
+        <button
+          onClick={() => handleScroll("about")}
+          className="text-neutral font-bold"
+        >
+          About
+        </button>
+      </li>
+      <li>
+        <button
+          onClick={() => handleScroll("projects")}
+          className="text-neutral font-bold"
+        >
+          Projects
+        </button>
+      </li>
+      <li>
+        <button
+          onClick={() => handleScroll("contact")}
+          className="text-neutral font-bold"
+        >
+          Contact Me
+        </button>
+      </li>
+    </>
+  );
+
   return (
     <div>
-      <div className="navbar bg-[#24583C] shadow-sm text-white fixed top-0 z-10 ">
+      <div className="navbar bg-accent/60 backdrop-blur-md rounded-sm shadow-sm fixed top-0 z-10 lg:px-4">
         <div className="navbar-start">
           {/* Hamburger dropdown for small screens */}
           <div className="dropdown lg:hidden">
@@ -33,58 +63,21 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-secondary rounded-box w-52 text-primary"
+              className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-secondary rounded-box w-52"
             >
-              <li>
-                <button onClick={() => handleScroll("about")}>About</button>
-              </li>
-              <li>
-                <button onClick={() => handleScroll("projects")}>
-                  Projects
-                </button>
-              </li>
-              <li>
-                <button onClick={() => handleScroll("contact")}>Contact</button>
-              </li>
+              {links}
             </ul>
           </div>
 
           {/* Brand */}
-          <a className="text-xl font-extrabold uppercase px-6 py-3 cursor-pointer hidden md:inline-block">
-            Marn
-            <span className="text-yellow-400 text-2xl mx-2">Stack</span>
-            Developer
-          </a>
+          <p className="text-2xl md:text-3xl font-bold text-primary">
+            Rohan<span className="text-neutral">R05</span>..
+          </p>
         </div>
 
         {/* Horizontal menu for large screens */}
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            <li>
-              <button
-                onClick={() => handleScroll("about")}
-                className="btn btn-ghost text-white"
-              >
-                About
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => handleScroll("projects")}
-                className="btn btn-ghost text-white"
-              >
-                Projects
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => handleScroll("contact")}
-                className="btn btn-ghost text-white"
-              >
-                Contact
-              </button>
-            </li>
-          </ul>
+          <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
 
         {/* Resume button */}

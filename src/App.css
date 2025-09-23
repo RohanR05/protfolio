@@ -3,15 +3,19 @@
 
 @plugin "daisyui/theme" {
   name: "light";
-  --color-primary: #245800;
+  --color-primary: #24583C;
   --color-secondary: #F8F8EC;
+   --color-accent:#ffffff; 
+   --color-neutral:#FF6B01
 }
 
 /* Dark theme */
 @plugin "daisyui/theme" {
   name: "dark";
   --color-primary: #bfffff;
-  --color-secondary:#051622; 
+  --color-secondary:#051622;
+   --color-accent:#000000;
+   --color-neutral:#FFE900;
 }
 
 
