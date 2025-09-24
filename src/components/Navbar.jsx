@@ -25,7 +25,8 @@ const Navbar = () => {
           onClick={() => handleScroll("about")}
           className="text-neutral font-bold"
         >
-Skills        </button>
+          Skills{" "}
+        </button>
       </li>
       <li>
         <button

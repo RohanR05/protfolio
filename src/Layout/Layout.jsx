@@ -10,8 +10,8 @@ const Layout = () => {
       <div className="max-w-screen-xl mx-auto ">
         {" "}
         <Outlet></Outlet>
-        <Footer></Footer>
-      </div>
+      </div>{" "}
+      <Footer></Footer>
     </div>
   );
 };

@@ -1,50 +1,143 @@
-import { Link } from "react-router"; // use react-router-dom
-import img1 from "../assets/facebook_3536394.png";
-import img2 from "../assets/github_733609.png";
-import img3 from "../assets/linkedin_3992606.png";
-import img4 from "../assets/logo_15713434.png";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faGithub,
+  faLinkedin,
+  faWhatsapp,
+} from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
+  const handleScroll = (sectionId) => {
+    const el = document.getElementById(sectionId);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
-    <footer className="footer footer-horizontal footer-center bg-[#24583C] text-white rounded p-10 mt-16">
-      <nav className="grid grid-flow-col gap-4">
-        {/* Use Link for internal routes */}
-        <Link to="/about" className="link link-hover">
-          About us
-        </Link>
+    <footer className="bg-secondary">
+      {" "}
+      <div className="footer footer-horizontal footer-center rounded p-10 mt-16 max-w-screen-xl mx-auto">
+        {/* upper section */}
+        <div className="w-full md:px-4 md:flex md:items-center md:justify-between">
+          {/* Links */}
+          <div className="flex flex-col items-start gap-3">
+            {" "}
+            <p className="text-2xl md:text-3xl font-bold text-primary">
+              Rohan<span className="text-neutral">R05</span>..
+            </p>
+            <h2 className="text-primary text-[17px]">
+              Learning by building. Improving with every project.
+            </h2>{" "}
+            <nav>
+              <ul className="flex w-80 gap-6 text-2xl">
+                <li>
+                  <a
+                    href="https://www.facebook.com/rohan.kabir.877108"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FontAwesomeIcon
+                      className="text-neutral text-3xl"
+                      icon={faFacebook}
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/RohanR05"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FontAwesomeIcon
+                      className="text-neutral text-3xl"
+                      icon={faGithub}
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/rohan-batman/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FontAwesomeIcon
+                      className="text-neutral text-3xl"
+                      icon={faLinkedin}
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://wa.me/8801XXXXXXXXX"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FontAwesomeIcon
+                      className="text-neutral text-3xl"
+                      icon={faWhatsapp}
+                    />
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
 
-      </nav>
-      <nav>
-        <ul className="flex w-72 gap-5">
-          {/* External links should use <a> */}
-          <li>
-            <a href="https://www.facebook.com/rohan.kabir.877108" target="_blank" rel="noreferrer">
-              <img src={img1} alt="Facebook" />
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/RohanR05" target="_blank" rel="noreferrer">
-              <img src={img2} alt="GitHub" />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/rohan-batman/" target="_blank" rel="noreferrer">
-              <img src={img3} alt="LinkedIn" />
-            </a>
-          </li>
-          <li>
-            {/* Assuming this is your logo, no link or link to home */}
-            <Link to="/">
-              <img src={img4} alt="Logo" />
-            </Link>
-          </li>
-        </ul>
-      </nav>
-      <aside>
-        <p className="mt-6 text-center text-sm">
-          Copyright © {new Date().getFullYear()} - All rights reserved by Rohan Industries Ltd
-        </p>
-      </aside>
+          {/* Quick Links */}
+          <nav className=" flex flex-col items-start gap-3">
+            <h2 className="text-xl font-bold text-neutral">Quick Links</h2>
+            <ul className="flex flex-col items-start gap-1">
+              <li>
+                <button
+                  onClick={() => handleScroll("about")}
+                  className="text-primary font-bold"
+                >
+                  About Me
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => handleScroll("about")}
+                  className="text-primary font-bold"
+                >
+                  Skills{" "}
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => handleScroll("about")}
+                  className="text-primary font-bold"
+                >
+                  My Services
+                </button>
+              </li>
+            </ul>
+          </nav>
+
+          {/* Contact Info */}
+          <div className="flex flex-col items-start">
+            <h2 className="text-xl font-bold text-neutral mb-2">
+              Contact Info..
+            </h2>
+            <p className="text-sm text-primary mb-1">Narail, Bangladesh</p>
+            <p className="text-sm text-primary mb-1">rohankabir061@gmail.com</p>
+            <p className="text-sm text-primary mb-1">+8801906647607</p>
+            <p className="text-sm text-primary font-medium">
+              Available For Work
+            </p>
+          </div>
+        </div>
+
+        <hr className="border border-neutral/20 w-full" />
+
+        {/* Lower Section */}
+        <div className="w-full flex flex-col md:flex-row items-center justify-center gap-2 mt-6 text-center text-sm">
+          <p>Copyright © {new Date().getFullYear()} - All rights reserved by</p>
+          <p className="text-2xl md:text-3xl font-bold text-primary md:ml-2">
+            Rohan<span className="text-neutral">R05</span>..
+          </p>
+        </div>
+      </div>
     </footer>
   );
 };
