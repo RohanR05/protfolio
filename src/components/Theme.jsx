@@ -1,27 +1,45 @@
-import React, { useState, useEffect } from "react";
+"use client";
 
-const Theme = () => {
-  const [theme, setTheme] = useState("light");
+import { useEffect, useState } from "react";
+import { Moon, Sun } from "lucide-react";
+
+export default function Theme() {
+  const [theme, setTheme] = useState("light"); // plain JS
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "light" || savedTheme === "dark") {
+      setTheme(savedTheme);
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (mounted) {
+      document.documentElement.setAttribute("data-theme", theme);
+      localStorage.setItem("theme", theme);
+    }
+  }, [theme, mounted]);
 
   const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    document.querySelector("html").setAttribute("data-theme", newTheme);
+    setTheme(prev => (prev === "light" ? "dark" : "light"));
   };
 
-  // Initialize theme on load
-  useEffect(() => {
-    document.querySelector("html").setAttribute("data-theme", theme);
-  }, [theme]);
+  if (!mounted) return null;
 
   return (
     <button
-      className="btn btn-sm "
       onClick={toggleTheme}
+      className="btn btn-ghost btn-circle bg-secondary border-neutral"
+      aria-label="Toggle Theme"
     >
-      {theme === "light" ? "Dark Mode" : "Light Mode"}
+      {theme === "light" ? (
+        <Moon className="w-5 h-5 text-primary " />
+      ) : (
+        <Sun className="w-5 h-5 text-primary " />
+      )}
     </button>
   );
-};
-
-export default Theme;
+}
