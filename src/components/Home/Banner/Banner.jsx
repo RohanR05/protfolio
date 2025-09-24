@@ -1,8 +1,15 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import img from "../../../assets/IMG-20221009-WA0000.jpg";
+import {
+  faFacebook,
+  faGithub,
+  faLinkedin,
+  faWhatsapp,
+} from "@fortawesome/free-brands-svg-icons";
 
 const Banner = () => {
   return (
-    <div className="bg-gradient-to-l from-primary to-secondary text-white flex flex-col md:flex-row items-center md:justify-evenly p-8 shadow-2xl">
+    <div className="bg-gradient-to-l from-primary to-secondary text-white flex flex-col md:flex-row items-center md:justify-evenly p-8 shadow shadow-neutral">
       {/* Image */}
       <div className="flex-shrink-0 mb-6 md:mb-0">
         <img
@@ -29,16 +36,60 @@ const Banner = () => {
           Passionate about building modern, scalable web applications with clean
           UI ✨ and efficient backend architecture ⚡.
         </p>
-        <a
-          href="
-       https://drive.google.com/file/d/180oEGkCsjBwAmAoht8vH36QYI19XcP4M/view?usp=sharing"
-          // add your resume link here
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn border border-white bg-gradient-to-r from-[#051622] to-[#24583C] text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:from-[#24583C] hover:to-[#051622] transition duration-300"
-        >
-          Resume
-        </a>
+        <ul className="flex flex-wrap gap-3 mt-5 md:gap-6 text-2xl">
+          <li>
+            <a
+              href="https://www.facebook.com/rohan.kabir.877108"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Facebook"
+            >
+              <FontAwesomeIcon
+                className="border border-primary p-1.5 rounded-lg text-primary bg-neutral/30 hover:bg-primary hover:text-neutral transition"
+                icon={faFacebook}
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/RohanR05"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+            >
+              <FontAwesomeIcon
+                className="border border-primary p-1.5 rounded-lg text-primary bg-neutral/30 hover:bg-primary hover:text-neutral transition"
+                icon={faGithub}
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/rohan-batman/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+            >
+              <FontAwesomeIcon
+                className="border border-primary p-1.5 rounded-lg text-primary bg-neutral/30 hover:bg-primary hover:text-neutral transition"
+                icon={faLinkedin}
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://wa.me/8801906647607"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="WhatsApp"
+            >
+              <FontAwesomeIcon
+                className="border border-primary p-1.5 rounded-lg text-primary bg-neutral/30 hover:bg-primary hover:text-neutral transition"
+                icon={faWhatsapp}
+              />
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   );
