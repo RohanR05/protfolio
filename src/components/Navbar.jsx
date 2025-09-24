@@ -17,7 +17,23 @@ const Navbar = () => {
           onClick={() => handleScroll("about")}
           className="text-neutral font-bold"
         >
-          About
+          About Me
+        </button>
+      </li>
+      <li>
+        <button
+          onClick={() => handleScroll("about")}
+          className="text-neutral font-bold"
+        >
+          My Services
+        </button>
+      </li>
+      <li>
+        <button
+          onClick={() => handleScroll("about")}
+          className="text-neutral font-bold"
+        >
+          Client Testimonials
         </button>
       </li>
       <li>
