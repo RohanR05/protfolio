@@ -1,44 +1,64 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { FaGraduationCap, FaSchool, FaUniversity } from "react-icons/fa";
 
 const Education = () => {
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  const educations = [
+    {
+      title: "Secondary School Certificate (SSC) - Science",
+      institution: "Sammilani Secondary School",
+      year: "2020",
+      icon: <FaSchool className="text-3xl text-primary mb-2" />,
+    },
+    {
+      title: "Higher Secondary Certificate (HSC) - Science",
+      institution: "Abdul High City College, Narail",
+      year: "2020",
+      icon: <FaGraduationCap className="text-3xl text-primary mb-2" />,
+    },
+    {
+      title: "Bachelor of Business Administration (BBA)",
+      institution: "National University (Currently Studying)",
+      year: "",
+      icon: <FaUniversity className="text-3xl text-primary mb-2" />,
+    },
+  ];
+
   return (
-    <section className="mx-auto p-8 bg-secondary rounded-lg shadow-md mt-16">
-      <h2 className="text-4xl font-bold mb-10 text-primary text-center">
-        Educational Qualification
+    <section className="mx-auto mt-16">
+      <h2 className="text-4xl font-bold mb-10 text-center">
+        Educational <span className="text-neutral">Qualification</span>
       </h2>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* SSC Card */}
-        <div className="bg-base-100 rounded-lg p-6 shadow-md">
-          <h3 className="text-xl font-semibold mb-3 text-primary">
-            Secondary School Certificate (SSC) - Science
-          </h3>
-          <p className="text-primary mb-1">Sammilani Secondary School</p>
-          <p className="text-primary">Year of Completion: 2018</p>
-        </div>
-
-        {/* HSC Card */}
-        <div className="bg-base-100 rounded-lg p-6 shadow-md">
-          <h3 className="text-xl font-semibold mb-3 text-primary">
-            Higher Secondary Certificate (HSC) - Science
-          </h3>
-          <p className="text-primary mb-1">
-            Abdul High City College, Narail
-          </p>
-          <p className="text-primary">Year of Completion: 2020</p>
-        </div>
-
-        {/* Current Study Card */}
-        <div className="bg-base-100 rounded-lg p-6 shadow-md">
-          <h3 className="text-xl font-semibold mb-3 text-primary">
-            Currently Studying
-          </h3>
-          <p className="text-primary mb-1">
-            Bachelor of Business Administration (BBA)
-          </p>
-          <p className="text-primary mb-1">National University</p>
-          <p className="text-primary italic">(Ongoing)</p>
-        </div>
+        {educations.map((edu, idx) => (
+          <motion.div
+            key={idx}
+            className="bg-secondary rounded-xl p-6 shadow-xl shadow-primary/60 text-center"
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {edu.icon}
+            <h3 className="text-xl font-semibold mb-3 text-neutral">
+              {edu.title}
+            </h3>
+            <p className="text-primary mb-1">{edu.institution}</p>
+            {edu.year && (
+              <p className="text-primary">Year of Completion: {edu.year}</p>
+            )}
+          </motion.div>
+        ))}
       </div>
     </section>
   );
