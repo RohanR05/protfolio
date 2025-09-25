@@ -28,12 +28,12 @@ const projects = [
       "Implement SMS notifications",
     ],
     features: [
-      "1. User-friendly parcel booking system",
-      "2. Real-time parcel tracking with tracking ID",
-      "3. Stripe payment integration for secure transactions",
-      "4. Admin panel for parcel management",
-      "5. Rider application system with approval workflow",
-      "6. Dynamic map showing 64 district service coverage",
+      "User-friendly parcel booking system",
+      "Real-time parcel tracking with tracking ID",
+      "Stripe payment integration for secure transactions",
+      "Admin panel for parcel management",
+      "Rider application system with approval workflow",
+      "Dynamic map showing 64 district service coverage",
     ],
   },
   {
@@ -51,12 +51,12 @@ const projects = [
     ],
     improvements: ["Mobile app version", "AI-based donation suggestion system"],
     features: [
-      "1. Role-based access for users, restaurants, and charities",
-      "2. Verified donations by admin before publishing",
-      "3. Request and confirm donation pickup system",
-      "4. Save to favorites for future reference",
-      "5. Charity can leave reviews on donations",
-      "6. Featured donations displayed on homepage",
+      "Role-based access for users, restaurants, and charities",
+      "Verified donations by admin before publishing",
+      "Request and confirm donation pickup system",
+      "Save to favorites for future reference",
+      "Charity can leave reviews on donations",
+      "Featured donations displayed on homepage",
     ],
   },
   {
@@ -80,12 +80,12 @@ const projects = [
     ],
     improvements: ["Add comment system", "Enable article categories and tags"],
     features: [
-      "1. Create, edit, and delete articles in real-time",
-      "2. Rich text editor for better writing experience",
-      "3. Responsive and animated UI with Framer Motion",
-      "4. Search and filter articles dynamically",
-      "5. User authentication and role-based access",
-      "6. Interactive dashboard for managing posts",
+      "Create, edit, and delete articles in real-time",
+      "Rich text editor for better writing experience",
+      "Responsive and animated UI with Framer Motion",
+      "Search and filter articles dynamically",
+      "User authentication and role-based access",
+      "Interactive dashboard for managing posts",
     ],
   },
 ];
@@ -98,7 +98,6 @@ const Projects = () => {
       <h2 className="text-4xl font-bold text-center mb-10">
         Featured <span className="text-neutral">Projects</span>
       </h2>
-
       <div className="grid gap-8 lg:grid-cols-3 sm:grid-cols-1 mx-2">
         {projects.map((project) => {
           const shownTech = project.techStack.slice(0, 3);
@@ -226,26 +225,6 @@ const Projects = () => {
                 </span>
               ))}
             </div>
-
-            <div className="flex gap-4">
-              <a
-                href={selectedProject.liveLink}
-                target="_blank"
-                rel="noreferrer"
-                className="bg-neutral text-secondary px-4 py-2 rounded-lg hover:bg-neutral/80"
-              >
-                Live Demo
-              </a>
-              <a
-                href={selectedProject.githubClient}
-                target="_blank"
-                rel="noreferrer"
-                className="bg-secondary border border-primary px-4 py-2 rounded-lg hover:bg-secondary/80"
-              >
-                GitHub
-              </a>
-            </div>
-
             <div className="modal-action">
               <button className="btn" onClick={() => setSelectedProject(null)}>
                 Close
