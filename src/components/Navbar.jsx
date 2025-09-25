@@ -19,18 +19,18 @@ const Navbar = () => {
         >
           About Me
         </button>
-      </li>
+      </li>{" "}
       <li>
         <button
-          onClick={() => handleScroll("about")}
+          onClick={() => handleScroll("projects")}
           className="text-neutral font-bold"
         >
-          Skills{" "}
+          Projects
         </button>
       </li>
       <li>
         <button
-          onClick={() => handleScroll("about")}
+          onClick={() => handleScroll("myServices")}
           className="text-neutral font-bold"
         >
           My Services
@@ -42,14 +42,6 @@ const Navbar = () => {
           className="text-neutral font-bold"
         >
           Client Testimonials
-        </button>
-      </li>
-      <li>
-        <button
-          onClick={() => handleScroll("projects")}
-          className="text-neutral font-bold"
-        >
-          Projects
         </button>
       </li>
       <li>
