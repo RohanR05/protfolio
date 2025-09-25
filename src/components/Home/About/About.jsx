@@ -17,7 +17,7 @@ const About = () => {
       <Card />
 
       {/* Flexbox instead of grid → easier for divider */}
-      <section className="mt-12 flex flex-col md:flex-row items-start">
+      <section className="mt-12 flex flex-col md:flex-row items-start mx-2">
         {/* Intro */}
         <div className="flex-1">
           <Intro />
