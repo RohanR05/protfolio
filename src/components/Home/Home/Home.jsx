@@ -6,6 +6,7 @@ import Projects from "../Projects/Projects";
 import Contact from "../Contact/Contact";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Loading from "../Loading/Loading";
 
 // Hook to check if screen is small (sm breakpoint)
 const useIsSmallScreen = () => {
@@ -46,6 +47,21 @@ const SectionWrapper = ({ children, animation }) => {
 };
 
 const Home = () => {
+  const [loading, setLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    // Simulate data fetching or asset loading
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // 2s fake delay
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loading />; // ✅ show loader until content is ready
+  }
+
   return (
     <div className="my-8 md:my-16 m-1">
       <SectionWrapper

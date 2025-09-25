@@ -6,10 +6,11 @@ import {
   faLinkedin,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
+import { Typewriter } from "react-simple-typewriter";
 
 const Banner = () => {
   return (
-    <div className="bg-gradient-to-l from-primary to-secondary text-white flex flex-col md:flex-row items-center md:justify-evenly p-8 shadow shadow-neutral">
+    <div className="bg-gradient-to-l from-primary/80 to-secondary text-accent flex flex-col md:flex-row items-center md:justify-evenly p-8 shadow shadow-neutral">
       {/* Image */}
       <div className="flex-shrink-0 mb-6 md:mb-0">
         <img
@@ -23,13 +24,21 @@ const Banner = () => {
       <div className="md:ml-8 text-center md:text-left max-w-xl">
         <h1 className="text-3xl font-bold mb-4">
           Hi, I’m{" "}
-          <span className="md:text-5xl text-secondary  animate-pulse">
-            Rohan Kabir
+          <span className="md:text-5xl text-neutral">
+            <Typewriter
+              words={["Rohan Kabir"]}
+              loop={0} // 0 = infinite loop
+              cursor
+              cursorStyle="|"
+              typeSpeed={150}
+              deleteSpeed={30}
+              delaySpeed={1500}
+            />
           </span>{" "}
           👋
         </h1>
 
-        <p className="text-2xl md:text-3xl font-semibold text-yellow-400 mb-3">
+        <p className="text-2xl md:text-3xl font-semibold text-primary mb-3">
           💻 MERN Stack Developer 🚀
         </p>
         <p className="text-lg">
