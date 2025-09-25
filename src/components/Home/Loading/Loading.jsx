@@ -1,10 +1,16 @@
-// Loading.jsx
 import { Player } from "@lottiefiles/react-lottie-player";
+import sandyLoading from "../../../assets/Sandy Loading.json";
 
 const Loading = () => {
   return (
-    <div className="flex items-center justify-center">
-<iframe src="https://lottie.host/embed/b6d5bb12-80a4-4ec1-aa36-e3fa441600bf/CoF91f6Ldx.lottie"></iframe>
+    <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
+      <Player
+        autoplay
+        loop
+        speed={1.5} // adjust speed
+        src={sandyLoading}
+        style={{ width: 250, height: 250 }}
+      />
     </div>
   );
 };

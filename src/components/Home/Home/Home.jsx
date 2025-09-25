@@ -13,7 +13,7 @@ const useIsSmallScreen = () => {
   const [isSmall, setIsSmall] = React.useState(false);
 
   React.useEffect(() => {
-    const mq = window.matchMedia("(max-width: 767px)"); // sm breakpoint in Tailwind
+    const mq = window.matchMedia("(max-width: 767px)");
     setIsSmall(mq.matches);
 
     const handler = (e) => setIsSmall(e.matches);
@@ -25,13 +25,12 @@ const useIsSmallScreen = () => {
   return isSmall;
 };
 
+// Section wrapper for scroll animations
 const SectionWrapper = ({ children, animation }) => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
   const isSmall = useIsSmallScreen();
 
-  if (isSmall) {
-    return <div ref={ref}>{children}</div>; // ❌ No animation on small screens
-  }
+  if (isSmall) return <div ref={ref}>{children}</div>;
 
   return (
     <motion.div
@@ -50,16 +49,13 @@ const Home = () => {
   const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
-    // Simulate data fetching or asset loading
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000); // 2s fake delay
-
+    // Simulate asset loading
+    const timer = setTimeout(() => setLoading(false), 1000); // adjust delay as needed
     return () => clearTimeout(timer);
   }, []);
 
   if (loading) {
-    return <Loading />; // ✅ show loader until content is ready
+    return <Loading />; // show Lottie loader until ready
   }
 
   return (
