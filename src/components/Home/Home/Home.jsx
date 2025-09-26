@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Loading from "../Loading/Loading";
 import Myservices from "../MyServices/Myservices";
+import AdditionalServices from "../AdditionalServices/AdditionalServices";
 
 // Hook to check if screen is small (sm breakpoint)
 const useIsSmallScreen = () => {
@@ -101,7 +102,7 @@ const Home = () => {
         </SectionWrapper>
       </div>
       <div id="myServices"><Myservices></Myservices></div>
-
+<div id='additionalServices'><AdditionalServices></AdditionalServices></div>
       <div id="contact">
         <SectionWrapper
           animation={{

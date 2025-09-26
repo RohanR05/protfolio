@@ -5,7 +5,6 @@ import Skills from "./Skills";
 import { motion } from "framer-motion";
 
 const About = () => {
-  // Animation variants
   const fadeUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
@@ -29,7 +28,16 @@ const About = () => {
         in modern web technologies
       </p>
 
-      <Card />
+      {/* Animate Card */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        whileHover={{ y: -10, scale: 1.02 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
+        <Card />
+      </motion.div>
 
       {/* Flexbox for intro & skills */}
       <section className="mt-12 flex flex-col md:flex-row items-start mx-2">
@@ -46,11 +54,9 @@ const About = () => {
 
         {/* Divider */}
         <div className="relative flex items-center justify-center my-6 md:mx-6">
-          {/* Line */}
           <div className="absolute inset-0 flex items-center md:justify-center">
             <div className="w-full md:w-px h-px md:h-full bg-gray-300"></div>
           </div>
-          {/* Icon in center */}
           <motion.div
             className="relative bg-base-100 p-2 rounded-full shadow-md border border-primary"
             initial="hidden"

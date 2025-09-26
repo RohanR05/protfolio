@@ -6,6 +6,7 @@ import {
   faDesktop,
   faPalette,
   faServer,
+  faPuzzlePiece,
 } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 
@@ -15,10 +16,10 @@ const Myservices = () => {
       id: "1",
       title: "Web Development",
       description:
-        "Full-stack web applications using modern frameworks like React, Next.js, TypeScript, Express.js, Node.js and MongoDB.",
+        "Full-stack web applications using modern frameworks like React, Next.js, Express.js, Node.js and MongoDB.",
       icon: faLaptopCode,
-      gradient: "from-blue-500 to-indigo-500", // normal icon gradient
-      hoverGradient: ["#93c5fd", "#c7d2fe"], // lighter gradient for card hover
+      gradient: "from-blue-500 to-indigo-500",
+      hoverGradient: ["#93c5fd", "#c7d2fe"],
       types: [
         "Custom Web Apps",
         "Progressive Web Apps",
@@ -51,7 +52,7 @@ const Myservices = () => {
       hoverGradient: ["#e9d5ff", "#fbcfe8"],
       types: [
         "React.js, Next.js & Modern JavaScript (ES6+)",
-        "Tailwind CSS, HTML5, CSS3, TypeScript",
+        "Tailwind CSS, HTML5, CSS3",
         "Axios & localStorage Integration",
         "State Management (useState, useEffect, useContext)",
       ],
@@ -86,7 +87,32 @@ const Myservices = () => {
         "Role-Based Access Control",
       ],
     },
+    {
+      id: "6",
+      title: "Frontend Tools & Libraries",
+      description:
+        "Integrating modern frontend tools and libraries to create interactive, animated, and user-friendly web applications.",
+      icon: faPuzzlePiece,
+      gradient: "from-indigo-400 to-purple-500",
+      hoverGradient: ["#e0e7ff", "#ede9fe"],
+      types: [
+        "Framer Motion (smooth animations & transitions)",
+        "Lottie (lightweight vector animations)",
+        "React Icons (scalable icon library)",
+        "SweetAlert2 (custom alerts & popups)",
+      ],
+    },
   ];
+
+  // Motion variants for each card
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.15, duration: 0.6, ease: "easeOut" },
+    }),
+  };
 
   return (
     <section className="max-w-7xl mx-auto py-10">
@@ -98,10 +124,15 @@ const Myservices = () => {
       </p>
 
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mx-4">
-        {data.map((service) => (
+        {data.map((service, index) => (
           <motion.div
             key={service.id}
             className="bg-accent p-5 rounded-2xl shadow-xl shadow-primary/40 cursor-pointer overflow-hidden"
+            custom={index}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={cardVariants}
             whileHover={{
               y: -8,
               background: `linear-gradient(135deg, ${service.hoverGradient[0]}, ${service.hoverGradient[1]})`,
@@ -126,8 +157,8 @@ const Myservices = () => {
             <p className="opacity-90 mb-3">{service.description}</p>
             {/* Types */}
             <ul className="list-disc list-inside opacity-70 font-medium space-y-1">
-              {service.types.map((type, index) => (
-                <li key={index}>{type}</li>
+              {service.types.map((type, idx) => (
+                <li key={idx}>{type}</li>
               ))}
             </ul>
           </motion.div>
