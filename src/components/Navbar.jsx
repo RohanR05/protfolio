@@ -69,7 +69,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="navbar bg-accent/60 backdrop-blur-md rounded-sm shadow-sm fixed top-0 z-10 lg:px-4">
+      <div className="navbar bg-accent/40 backdrop-blur-md rounded-sm shadow-sm fixed top-0 z-10 lg:px-4">
         <div className="navbar-start">
           {/* Hamburger dropdown for small screens */}
           <div className="dropdown lg:hidden">

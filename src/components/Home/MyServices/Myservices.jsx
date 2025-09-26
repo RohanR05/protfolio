@@ -125,20 +125,22 @@ const Myservices = () => {
 
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mx-4">
         {data.map((service, index) => (
-          <motion.div
-            key={service.id}
-            className="bg-accent p-5 rounded-2xl shadow-xl shadow-primary/40 cursor-pointer overflow-hidden"
-            custom={index}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={cardVariants}
-            whileHover={{
-              y: -8,
-              background: `linear-gradient(135deg, ${service.hoverGradient[0]}, ${service.hoverGradient[1]})`,
-              transition: { duration: 0.5 },
-            }}
-          >
+  <motion.div
+  key={service.id}
+  className="bg-accent p-5 rounded-2xl shadow-xl shadow-primary/40 cursor-pointer overflow-hidden group hover:text-black"
+  custom={index}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.3 }}
+  variants={cardVariants}
+  whileHover={{
+    y: -8,
+    background: `linear-gradient(135deg, ${service.hoverGradient[0]}, ${service.hoverGradient[1]})`,
+    transition: { duration: 0.5 },
+  }}
+>
+
+
             {/* Icon */}
             <motion.div
               className={`p-4 rounded-lg mb-3 inline-block bg-gradient-to-r ${service.gradient} text-white`}
