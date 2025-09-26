@@ -10,6 +10,7 @@ import Testimonial from "../Testimonial/Testimonial";
 import Loading from "../Loading/Loading";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 // Hook to check if screen is small (sm breakpoint)
 const useIsSmallScreen = () => {
@@ -40,7 +41,11 @@ const SectionWrapper = ({ children, animation, stagger = false }) => {
       ref={ref}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
-      variants={stagger ? { hidden: {}, visible: { transition: { staggerChildren: 0.2 } } } : animation}
+      variants={
+        stagger
+          ? { hidden: {}, visible: { transition: { staggerChildren: 0.2 } } }
+          : animation
+      }
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
       {children}
@@ -59,7 +64,17 @@ const Home = () => {
   if (loading) return <Loading />;
 
   return (
-    <div className="my-8 md:my-16 m-1">
+    <div className="relative my-8 md:my-16 m-1">
+      {/* Background Sparkles Animation */}
+      <div className="absolute inset-0 -z-10">
+        <DotLottieReact
+          src="https://lottie.host/2ae123ef-7a55-439b-8a6f-96d3592fffdb/C8KPXM5V8r.lottie"
+          loop
+          autoplay
+          className="w-full h-full object-cover"
+        />
+      </div>
+
       {/* Banner */}
       <SectionWrapper
         animation={{
@@ -106,9 +121,7 @@ const Home = () => {
 
       {/* My Services */}
       <div id="myServices">
-        <SectionWrapper
-          stagger={true} // enables staggered animation for cards inside
-        >
+        <SectionWrapper stagger={true}>
           <Myservices />
         </SectionWrapper>
       </div>

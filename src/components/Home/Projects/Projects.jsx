@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import img1 from "../../../assets/Screenshot 2025-08-08 170020.png";
 import img2 from "../../../assets/Screenshot 2025-09-26 005136.png";
 import img3 from "../../../assets/Screenshot 2025-08-08 175058.png";
+import img4 from "../../../assets/jobportal.png";
+import img5 from "../../../assets/word.png";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -69,6 +71,55 @@ const projects = [
       "Search and filter articles dynamically",
       "User authentication and role-based access",
       "Interactive dashboard for managing posts",
+    ],
+  },
+  {
+    id: "4",
+    name: "Modern Job Portal",
+    image: img4, // <-- make sure you import or add an image for this project
+    techStack: [
+      "Next.js 13+",
+      "React",
+      "TailwindCSS",
+      "DaisyUI",
+      "ShadCN UI",
+      "NextAuth",
+      "MongoDB",
+      "Node.js",
+    ],
+    description:
+      "A modern job portal where applicants can browse and apply for jobs, while HR or admins can post and manage listings. Built with Next.js 13+, MongoDB, NextAuth, Tailwind CSS, DaisyUI, and ShadCN UI.",
+    liveLink: "https://job-portal-alpha-snowy.vercel.app/", // replace with actual live link if deployed
+    githubClient: "https://github.com/RohanR05/internNaki-", // replace with actual repo
+    features: [
+      "Browse available jobs with filtering by location, company, or employment type",
+      "View detailed job descriptions, requirements, salary, and benefits",
+      "Register and login using email/password or Google OAuth",
+      "Live error messages for login and registration",
+      "Apply to jobs and navigate easily with 'Back to Jobs' buttons",
+      "Dark mode & light mode toggle with custom colors",
+      "Post new jobs with full details (title, company, description, requirements, salary, benefits, deadlines)",
+      "Manage job listings with role-based authentication and authorization",
+      "Tailwind CSS + DaisyUI + ShadCN UI for a clean, responsive interface",
+      "Light & Dark themes with custom brand colors",
+    ],
+  },
+  {
+    id: "5",
+    name: "English-Word",
+    image: img5, // import or assign an image/icon for this project
+    techStack: ["React", "JavaScript", "HTML", "CSS"],
+    description:
+      "A web app focused on English vocabulary / word learning, lookup, and practice—built to help users explore, test, and improve their word knowledge.",
+    liveLink: "https://englishwordbyr.netlify.app/", // replace with your actual live link
+    githubClient: "https://github.com/RohanR05/English-Word",
+    features: [
+      "Search and lookup English words and definitions",
+      "Save favorite words for later review",
+      "Quiz mode to test vocabulary knowledge",
+      "Responsive layout for mobile & desktop",
+      "Light and dark theme toggling",
+      "History of looked up words",
     ],
   },
 ];
