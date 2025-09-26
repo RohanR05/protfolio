@@ -1,5 +1,13 @@
 import React from "react";
 import Theme from "./Theme";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faUser,
+  faFolderOpen,
+  faLaptopCode,
+  faUsers,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   const handleScroll = (sectionId) => {
@@ -11,44 +19,48 @@ const Navbar = () => {
 
   const links = (
     <>
-      {" "}
       <li>
         <button
           onClick={() => handleScroll("about")}
-          className="text-neutral font-bold"
+          className="text-neutral font-bold flex items-center gap-2"
         >
+          <FontAwesomeIcon icon={faUser} />
           About Me
         </button>
-      </li>{" "}
+      </li>
       <li>
         <button
           onClick={() => handleScroll("projects")}
-          className="text-neutral font-bold"
+          className="text-neutral font-bold flex items-center gap-2"
         >
+          <FontAwesomeIcon icon={faFolderOpen} />
           Projects
         </button>
       </li>
       <li>
         <button
           onClick={() => handleScroll("myServices")}
-          className="text-neutral font-bold"
+          className="text-neutral font-bold flex items-center gap-2"
         >
+          <FontAwesomeIcon icon={faLaptopCode} />
           My Services
         </button>
       </li>
       <li>
         <button
           onClick={() => handleScroll("testimonials")}
-          className="text-neutral font-bold"
+          className="text-neutral font-bold flex items-center gap-2"
         >
+          <FontAwesomeIcon icon={faUsers} />
           Client Testimonials
         </button>
       </li>
       <li>
         <button
           onClick={() => handleScroll("contact")}
-          className="text-neutral font-bold"
+          className="text-neutral font-bold flex items-center gap-2"
         >
+          <FontAwesomeIcon icon={faEnvelope} />
           Contact Me
         </button>
       </li>

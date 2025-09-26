@@ -4,12 +4,12 @@ import About from "../About/About";
 import Education from "../Educaion/Education";
 import Projects from "../Projects/Projects";
 import Contact from "../Contact/Contact";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import Loading from "../Loading/Loading";
 import Myservices from "../MyServices/Myservices";
 import AdditionalServices from "../AdditionalServices/AdditionalServices";
 import Testimonial from "../Testimonial/Testimonial";
+import Loading from "../Loading/Loading";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 // Hook to check if screen is small (sm breakpoint)
 const useIsSmallScreen = () => {
@@ -29,7 +29,7 @@ const useIsSmallScreen = () => {
 };
 
 // Section wrapper for scroll animations
-const SectionWrapper = ({ children, animation }) => {
+const SectionWrapper = ({ children, animation, stagger = false }) => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
   const isSmall = useIsSmallScreen();
 
@@ -40,7 +40,7 @@ const SectionWrapper = ({ children, animation }) => {
       ref={ref}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
-      variants={animation}
+      variants={stagger ? { hidden: {}, visible: { transition: { staggerChildren: 0.2 } } } : animation}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
       {children}
@@ -52,17 +52,15 @@ const Home = () => {
   const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
-    // Simulate asset loading
-    const timer = setTimeout(() => setLoading(false), 1000); // adjust delay as needed
+    const timer = setTimeout(() => setLoading(false), 1000);
     return () => clearTimeout(timer);
   }, []);
 
-  if (loading) {
-    return <Loading />; // show Lottie loader until ready
-  }
+  if (loading) return <Loading />;
 
   return (
     <div className="my-8 md:my-16 m-1">
+      {/* Banner */}
       <SectionWrapper
         animation={{
           hidden: { y: -50, opacity: 0 },
@@ -71,6 +69,8 @@ const Home = () => {
       >
         <Banner />
       </SectionWrapper>
+
+      {/* About */}
       <div id="about">
         <SectionWrapper
           animation={{
@@ -81,6 +81,8 @@ const Home = () => {
           <About />
         </SectionWrapper>
       </div>
+
+      {/* Education */}
       <SectionWrapper
         animation={{
           hidden: { opacity: 0 },
@@ -89,6 +91,8 @@ const Home = () => {
       >
         <Education />
       </SectionWrapper>
+
+      {/* Projects */}
       <div id="projects">
         <SectionWrapper
           animation={{
@@ -99,15 +103,31 @@ const Home = () => {
           <Projects />
         </SectionWrapper>
       </div>
+
+      {/* My Services */}
       <div id="myServices">
-        <Myservices></Myservices>
+        <SectionWrapper
+          stagger={true} // enables staggered animation for cards inside
+        >
+          <Myservices />
+        </SectionWrapper>
       </div>
+
+      {/* Additional Services */}
       <div id="additionalServices">
-        <AdditionalServices></AdditionalServices>
-      </div>{" "}
-      <div id="testimonials">
-        <Testimonial></Testimonial>
+        <SectionWrapper stagger={true}>
+          <AdditionalServices />
+        </SectionWrapper>
       </div>
+
+      {/* Testimonials */}
+      <div id="testimonials">
+        <SectionWrapper stagger={true}>
+          <Testimonial />
+        </SectionWrapper>
+      </div>
+
+      {/* Contact */}
       <div id="contact">
         <SectionWrapper
           animation={{

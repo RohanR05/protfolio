@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
@@ -6,6 +5,15 @@ import {
   faLinkedin,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
+import {
+  faUser,
+  faFolderOpen,
+  faLaptopCode,
+  faEnvelope,
+  faMapMarkerAlt,
+  faPhone,
+  faBriefcase,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
   const handleScroll = (sectionId) => {
@@ -29,104 +37,91 @@ const Footer = () => {
               Learning by building. Improving with every project.
             </h2>
             <nav>
-              <ul className="flex flex-wrap gap-3 md:gap-6 text-2xl">
-                <li>
-                  <a
-                    href="https://www.facebook.com/rohan.kabir.877108"
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label="Facebook"
-                  >
-                    <FontAwesomeIcon
-                      className="border border-primary p-1.5 rounded-lg text-primary bg-neutral/30 hover:bg-primary hover:text-neutral transition"
-                      icon={faFacebook}
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://github.com/RohanR05"
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label="GitHub"
-                  >
-                    <FontAwesomeIcon
-                      className="border border-primary p-1.5 rounded-lg text-primary bg-neutral/30 hover:bg-primary hover:text-neutral transition"
-                      icon={faGithub}
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.linkedin.com/in/rohan-batman/"
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label="LinkedIn"
-                  >
-                    <FontAwesomeIcon
-                      className="border border-primary p-1.5 rounded-lg text-primary bg-neutral/30 hover:bg-primary hover:text-neutral transition"
-                      icon={faLinkedin}
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://wa.me/8801906647607"
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label="WhatsApp"
-                  >
-                    <FontAwesomeIcon
-                      className="border border-primary p-1.5 rounded-lg text-primary bg-neutral/30 hover:bg-primary hover:text-neutral transition"
-                      icon={faWhatsapp}
-                    />
-                  </a>
-                </li>
+              <ul className="flex flex-wrap gap-3 md:gap-6 text-2xl mt-2">
+                {[faFacebook, faGithub, faLinkedin, faWhatsapp].map((icon, idx) => (
+                  <li key={idx}>
+                    <a
+                      href={
+                        icon === faFacebook
+                          ? "https://www.facebook.com/rohan.kabir.877108"
+                          : icon === faGithub
+                          ? "https://github.com/RohanR05"
+                          : icon === faLinkedin
+                          ? "https://www.linkedin.com/in/rohan-batman/"
+                          : "https://wa.me/8801906647607"
+                      }
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="social link"
+                    >
+                      <FontAwesomeIcon
+                        className="border border-primary p-1.5 rounded-lg text-primary bg-neutral/30 hover:bg-primary hover:text-neutral transition"
+                        icon={icon}
+                      />
+                    </a>
+                  </li>
+                ))}
               </ul>
             </nav>
           </div>
 
-          {/* Quick Links */}
+          {/* Quick Links with Icons */}
           <nav className="flex flex-col items-start gap-3 flex-1 min-w-0">
             <h2 className="text-xl font-bold text-neutral">Quick Links</h2>
-            <ul className="flex flex-col items-start gap-1">
+            <ul className="flex flex-col items-start gap-2">
               <li>
                 <button
                   onClick={() => handleScroll("about")}
-                  className="text-primary font-bold hover:underline"
+                  className="flex items-center gap-2 text-primary font-bold hover:underline"
                 >
+                  <FontAwesomeIcon icon={faUser} />
                   About Me
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => handleScroll("skills")}
-                  className="text-primary font-bold hover:underline"
+                  onClick={() => handleScroll("projects")}
+                  className="flex items-center gap-2 text-primary font-bold hover:underline"
                 >
-                  Skills
+                  <FontAwesomeIcon icon={faFolderOpen} />
+                  Projects
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => handleScroll("services")}
-                  className="text-primary font-bold hover:underline"
+                  onClick={() => handleScroll("myServices")}
+                  className="flex items-center gap-2 text-primary font-bold hover:underline"
                 >
+                  <FontAwesomeIcon icon={faLaptopCode} />
                   My Services
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => handleScroll("contact")}
+                  className="flex items-center gap-2 text-primary font-bold hover:underline"
+                >
+                  <FontAwesomeIcon icon={faEnvelope} />
+                  Contact Me
                 </button>
               </li>
             </ul>
           </nav>
 
-          {/* Contact Info */}
+          {/* Contact Info with Icons */}
           <div className="flex flex-col items-start flex-1 min-w-0">
-            <h2 className="text-xl font-bold text-neutral mb-2">
-              Contact Info..
-            </h2>
-            <p className="text-sm text-primary mb-1">Narail, Bangladesh</p>
-            <p className="text-sm text-primary mb-1">rohankabir061@gmail.com</p>
-            <p className="text-sm text-primary mb-1">+8801906647607</p>
-            <p className="text-sm text-primary font-medium">
-              Available For Work
+            <h2 className="text-xl font-bold text-neutral mb-2">Contact Info..</h2>
+            <p className="flex items-center gap-2 text-sm text-primary mb-1">
+              <FontAwesomeIcon icon={faMapMarkerAlt} /> Narail, Bangladesh
+            </p>
+            <p className="flex items-center gap-2 text-sm text-primary mb-1">
+              <FontAwesomeIcon icon={faEnvelope} /> rohankabir061@gmail.com
+            </p>
+            <p className="flex items-center gap-2 text-sm text-primary mb-1">
+              <FontAwesomeIcon icon={faPhone} /> +8801906647607
+            </p>
+            <p className="flex items-center gap-2 text-sm text-primary font-medium">
+              <FontAwesomeIcon icon={faBriefcase} /> Available For Work
             </p>
           </div>
         </div>
