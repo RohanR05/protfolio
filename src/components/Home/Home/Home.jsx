@@ -9,6 +9,7 @@ import { useInView } from "react-intersection-observer";
 import Loading from "../Loading/Loading";
 import Myservices from "../MyServices/Myservices";
 import AdditionalServices from "../AdditionalServices/AdditionalServices";
+import Testimonial from "../Testimonial/Testimonial";
 
 // Hook to check if screen is small (sm breakpoint)
 const useIsSmallScreen = () => {
@@ -70,7 +71,6 @@ const Home = () => {
       >
         <Banner />
       </SectionWrapper>
-
       <div id="about">
         <SectionWrapper
           animation={{
@@ -81,7 +81,6 @@ const Home = () => {
           <About />
         </SectionWrapper>
       </div>
-
       <SectionWrapper
         animation={{
           hidden: { opacity: 0 },
@@ -90,7 +89,6 @@ const Home = () => {
       >
         <Education />
       </SectionWrapper>
-
       <div id="projects">
         <SectionWrapper
           animation={{
@@ -101,8 +99,15 @@ const Home = () => {
           <Projects />
         </SectionWrapper>
       </div>
-      <div id="myServices"><Myservices></Myservices></div>
-<div id='additionalServices'><AdditionalServices></AdditionalServices></div>
+      <div id="myServices">
+        <Myservices></Myservices>
+      </div>
+      <div id="additionalServices">
+        <AdditionalServices></AdditionalServices>
+      </div>{" "}
+      <div id="testimonials">
+        <Testimonial></Testimonial>
+      </div>
       <div id="contact">
         <SectionWrapper
           animation={{

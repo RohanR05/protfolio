@@ -1,11 +1,11 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { 
-  faTachometerAlt, 
-  faSearch, 
-  faLifeRing, 
-  faCode, 
-  faArrowRight 
+import {
+  faTachometerAlt,
+  faSearch,
+  faLifeRing,
+  faCode,
+  faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 
@@ -57,11 +57,16 @@ const AdditionalServices = () => {
           return { opacity: 0 };
       }
     },
-    visible: { opacity: 1, x: 0, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
   };
 
   return (
-    <section className="max-w-7xl mx-auto py-10">
+    <section className="mx-auto py-10">
       <h2 className="text-4xl font-bold text-center mb-6">
         Additional <span className="text-neutral">Services</span>
       </h2>
@@ -89,12 +94,14 @@ const AdditionalServices = () => {
 
       {/* Call to Action Section */}
       <motion.div
-        className="mt-12 text-center p-8 bg-secondary rounded-2xl" 
+        className="md:w-2/3 lg:w-1/2 mx-auto mt-12 text-center p-8 bg-secondary rounded-2xl"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        <h2 className="text-3xl font-bold mb-2">Ready to Start Your Project?</h2>
+        <h2 className="text-3xl font-bold mb-2">
+          Ready to Start Your Project?
+        </h2>
         <p className="text-primary/80 mb-4">
           Let's discuss your requirements and create something amazing together
         </p>

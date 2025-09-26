@@ -38,7 +38,7 @@ const Navbar = () => {
       </li>
       <li>
         <button
-          onClick={() => handleScroll("about")}
+          onClick={() => handleScroll("testimonials")}
           className="text-neutral font-bold"
         >
           Client Testimonials
