@@ -115,14 +115,14 @@ const Home = () => {
             visible: { x: 0, opacity: 1 },
           }}
         >
-          {/* <Projects /> */}
+          <Projects />
         </SectionWrapper>
       </div>
 
       {/* My Services */}
       <div id="myServices">
         <SectionWrapper stagger={true}>
-          {/* <Myservices /> */}
+          <Myservices />
         </SectionWrapper>
       </div>
 
