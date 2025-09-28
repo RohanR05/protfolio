@@ -10,11 +10,11 @@ import { Typewriter } from "react-simple-typewriter";
 
 const Banner = () => {
   return (
-    <div className="bg-gradient-to-l from-primary/80 to-secondary text-accent flex flex-col md:flex-row items-center md:justify-evenly p-8 shadow shadow-neutral">
+    <div className="font-lato bg-gradient-to-l from-primary/80 to-secondary text-accent flex flex-col md:flex-row items-center md:justify-evenly p-4 md:p-8 shadow shadow-neutral">
       {/* Image */}
       <div className="flex-shrink-0 mb-6 md:mb-0">
         <img
-          className="w-48 h-48 md:w-72 md:h-74 object-cover rounded-full border-4 border-primary shadow-lg"
+          className="w-48 h-48 md:w-72 md:h-72 object-cover rounded-full border-4 border-primary shadow-lg"
           src={img}
           alt="Profile"
         />
@@ -22,9 +22,9 @@ const Banner = () => {
 
       {/* Text */}
       <div className="md:ml-8 text-center md:text-left max-w-xl">
-        <h1 className="text-3xl font-bold mb-4">
+        <h1 className="text-3xl md:text-4xl font-bold mb-4">
           Hi, I’m{" "}
-          <span className="md:text-5xl text-neutral">
+          <span className="text-4xl md:text-5xl text-neutral">
             <Typewriter
               words={["Rohan Kabir"]}
               loop={0} // 0 = infinite loop
@@ -34,18 +34,20 @@ const Banner = () => {
               deleteSpeed={30}
               delaySpeed={1500}
             />
-          </span>{" "}
-          
+          </span>
         </h1>
 
         <p className="text-2xl md:text-3xl font-semibold text-primary mb-3">
           💻 MERN Stack Developer 🚀
         </p>
-        <p className="text-lg">
+
+        <p className="text-lg mb-5">
           Passionate about building modern, scalable web applications with clean
           UI ✨ and efficient backend architecture ⚡.
         </p>
-        <ul className="flex flex-wrap gap-3 mt-5 md:gap-6 text-2xl">
+
+        {/* Social Icons */}
+        <ul className="flex flex-wrap gap-3 md:gap-6 text-2xl mb-6">
           <li>
             <a
               href="https://www.facebook.com/rohan.kabir.877108"
@@ -98,7 +100,20 @@ const Banner = () => {
               />
             </a>
           </li>
+          <li>
+            {" "}
+            <a
+              href="https://drive.google.com/file/d/180oEGkCsjBwAmAoht8vH36QYI19XcP4M/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block md:inline-block btn border-secondary bg-gradient-to-r from-neutral to-primary text-accent font-bold px-6 py-2 rounded-lg shadow-md hover:from-primary hover:to-neutral transition duration-300"
+            >
+              Resume
+            </a>
+          </li>
         </ul>
+
+        {/* Resume Button */}
       </div>
     </div>
   );
