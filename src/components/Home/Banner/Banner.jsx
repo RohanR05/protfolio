@@ -35,7 +35,7 @@ const Banner = () => {
               delaySpeed={1500}
             />
           </span>{" "}
-          👋
+          
         </h1>
 
         <p className="text-2xl md:text-3xl font-semibold text-primary mb-3">
