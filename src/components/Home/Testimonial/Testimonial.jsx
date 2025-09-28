@@ -50,7 +50,7 @@ const Testimonial = () => {
         {testimonials.map((item, index) => (
           <motion.div
             key={item.id}
-            className="bg-accent p-5 rounded-2xl shadow-xl flex flex-col items-center cursor-pointer"
+            className="bg-secondary p-5 rounded-2xl shadow-xl flex flex-col items-center cursor-pointer"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -67,7 +67,9 @@ const Testimonial = () => {
               />
             </motion.div>
             <h3 className="text-xl font-bold text-neutral">{item.title}</h3>
-            <p className="text-primary font-bold text-2xl">{item.description}</p>
+            <p className="text-primary font-bold text-2xl">
+              {item.description}
+            </p>
           </motion.div>
         ))}
       </div>

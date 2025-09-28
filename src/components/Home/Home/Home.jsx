@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import Banner from "../Banner/Banner";
 import About from "../About/About";
 import Education from "../Educaion/Education";
@@ -10,7 +10,6 @@ import Testimonial from "../Testimonial/Testimonial";
 import Loading from "../Loading/Loading";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 // Hook to check if screen is small (sm breakpoint)
 const useIsSmallScreen = () => {
@@ -61,60 +60,71 @@ const Home = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  // ✅ Memoized animation variants
+  const bannerAnim = useMemo(
+    () => ({
+      hidden: { y: -50, opacity: 0 },
+      visible: { y: 0, opacity: 1 },
+    }),
+    []
+  );
+
+  const aboutAnim = useMemo(
+    () => ({
+      hidden: { x: -150, opacity: 0 },
+      visible: { x: 0, opacity: 1 },
+    }),
+    []
+  );
+
+  const educationAnim = useMemo(
+    () => ({
+      hidden: { opacity: 0 },
+      visible: { opacity: 1 },
+    }),
+    []
+  );
+
+  const projectsAnim = useMemo(
+    () => ({
+      hidden: { x: 150, opacity: 0 },
+      visible: { x: 0, opacity: 1 },
+    }),
+    []
+  );
+
+  const contactAnim = useMemo(
+    () => ({
+      hidden: { scale: 0.8, opacity: 0 },
+      visible: { scale: 1, opacity: 1 },
+    }),
+    []
+  );
+
   if (loading) return <Loading />;
 
   return (
     <div className="relative my-8 md:my-16 m-1">
-      {/* Background Sparkles Animation */}
-      <div className="absolute inset-0 -z-10">
-        <DotLottieReact
-          src="https://lottie.host/2ae123ef-7a55-439b-8a6f-96d3592fffdb/C8KPXM5V8r.lottie"
-          loop
-          autoplay
-          className="w-full h-full object-cover"
-        />
-      </div>
-
       {/* Banner */}
-      <SectionWrapper
-        animation={{
-          hidden: { y: -50, opacity: 0 },
-          visible: { y: 0, opacity: 1 },
-        }}
-      >
+      <SectionWrapper animation={bannerAnim}>
         <Banner />
       </SectionWrapper>
 
       {/* About */}
       <div id="about">
-        <SectionWrapper
-          animation={{
-            hidden: { x: -150, opacity: 0 },
-            visible: { x: 0, opacity: 1 },
-          }}
-        >
+        <SectionWrapper animation={aboutAnim}>
           <About />
         </SectionWrapper>
       </div>
 
       {/* Education */}
-      <SectionWrapper
-        animation={{
-          hidden: { opacity: 0 },
-          visible: { opacity: 1 },
-        }}
-      >
+      <SectionWrapper animation={educationAnim}>
         <Education />
       </SectionWrapper>
 
       {/* Projects */}
       <div id="projects">
-        <SectionWrapper
-          animation={{
-            hidden: { x: 150, opacity: 0 },
-            visible: { x: 0, opacity: 1 },
-          }}
-        >
+        <SectionWrapper animation={projectsAnim}>
           <Projects />
         </SectionWrapper>
       </div>
@@ -142,12 +152,7 @@ const Home = () => {
 
       {/* Contact */}
       <div id="contact">
-        <SectionWrapper
-          animation={{
-            hidden: { scale: 0.8, opacity: 0 },
-            visible: { scale: 1, opacity: 1 },
-          }}
-        >
+        <SectionWrapper animation={contactAnim}>
           <Contact />
         </SectionWrapper>
       </div>

@@ -1,18 +1,109 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { motion } from "framer-motion";
-import img1 from "../../../assets/Screenshot 2025-08-08 170020.png";
-import img2 from "../../../assets/Screenshot 2025-09-26 005136.png";
-import img3 from "../../../assets/Screenshot 2025-08-08 175058.png";
-import img4 from "../../../assets/jobportal.png";
-import img5 from "../../../assets/word.png";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faInfoCircle,
-  faUpRightFromSquare,
-} from "@fortawesome/free-solid-svg-icons";
+import { faInfoCircle, faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import img1 from "../../../assets/courier.webp";
+import img2 from "../../../assets/food.webp";
+import img3 from "../../../assets/article.webp";
+import img4 from "../../../assets/jobportal.webp";
+import img5 from "../../../assets/word.webp";
 
-const projects = [
+// ✅ Memoized Project Card
+const ProjectCard = React.memo(({ project, index, onSelect }) => {
+  return (
+    <motion.div
+      key={project.id}
+      className="bg-secondary shadow-xl rounded-2xl overflow-hidden flex flex-col"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: index * 0.1, duration: 0.3 }}
+      whileHover={{ scale: 1.03 }}
+    >
+      <img
+        src={project.image}
+        alt={project.name}
+        loading="lazy"
+        className="w-full h-48 object-cover"
+      />
+
+      <div className="p-5 flex flex-col flex-grow">
+        <h3 className="text-xl text-neutral font-bold mb-2">{project.name}</h3>
+        <p className="mb-3 text-primary flex-grow line-clamp-3">
+          {project.description}
+        </p>
+
+        {/* Tech stack */}
+        <h4 className="font-semibold mb-2">🛠 Tech Stack:</h4>
+        <div className="flex flex-wrap gap-2 mb-4">
+          {project.techStack.slice(0, 3).map((tech, i) => (
+            <span
+              key={i}
+              className="bg-primary text-secondary px-2 py-1 rounded text-sm font-medium"
+            >
+              {tech}
+            </span>
+          ))}
+          {project.techStack.length > 3 && (
+            <span className="bg-neutral text-secondary px-2 py-1 rounded text-sm font-medium">
+              +{project.techStack.length - 3} more
+            </span>
+          )}
+        </div>
+
+        {/* Features */}
+        <h4 className="font-semibold mb-2">✨ Key Features:</h4>
+        <ul className="list-disc list-inside text-primary text-sm mb-4">
+          {project.features.slice(0, 3).map((feature, i) => (
+            <li key={i}>{feature}</li>
+          ))}
+          {project.features.length > 3 && (
+            <li className="italic text-neutral">
+              +{project.features.length - 3} more...
+            </li>
+          )}
+        </ul>
+
+        {/* Buttons */}
+        <div className="flex gap-2 items-center mt-4">
+          <motion.a
+            href={project.liveLink}
+            target="_blank"
+            rel="noreferrer"
+            className="flex-1 flex justify-center items-center border border-primary p-3 rounded-lg text-primary font-medium hover:bg-primary/10 transition"
+            whileHover={{ scale: 1.03 }}
+          >
+            <FontAwesomeIcon icon={faUpRightFromSquare} className="mr-2" />
+            Live
+          </motion.a>
+
+          <motion.button
+            onClick={() => onSelect(project)}
+            className="border border-primary p-3 rounded-lg text-primary hover:bg-primary/10 transition"
+            whileHover={{ scale: 1.1 }}
+          >
+            <FontAwesomeIcon icon={faInfoCircle} />
+          </motion.button>
+
+          <motion.a
+            href={project.githubClient}
+            target="_blank"
+            rel="noreferrer"
+            className="border border-primary p-3 rounded-lg text-primary hover:bg-primary/10 transition"
+            whileHover={{ scale: 1.1 }}
+          >
+            <FontAwesomeIcon icon={faGithub} />
+          </motion.a>
+        </div>
+      </div>
+    </motion.div>
+  );
+});
+
+const Projects = () => {
+  const [selectedProject, setSelectedProject] = useState(null);
+
+ const projects = [
   {
     id: "1",
     name: "Parcel Delivery Website",
@@ -76,7 +167,7 @@ const projects = [
   {
     id: "4",
     name: "Modern Job Portal",
-    image: img4, // <-- make sure you import or add an image for this project
+    image: img4,
     techStack: [
       "Next.js 13+",
       "React",
@@ -88,30 +179,27 @@ const projects = [
       "Node.js",
     ],
     description:
-      "A modern job portal where applicants can browse and apply for jobs, while HR or admins can post and manage listings. Built with Next.js 13+, MongoDB, NextAuth, Tailwind CSS, DaisyUI, and ShadCN UI.",
-    liveLink: "https://job-portal-alpha-snowy.vercel.app/", // replace with actual live link if deployed
-    githubClient: "https://github.com/RohanR05/internNaki-", // replace with actual repo
+      "A modern job portal where applicants can browse and apply for jobs, while HR or admins can post and manage listings.",
+    liveLink: "https://job-portal-alpha-snowy.vercel.app/",
+    githubClient: "https://github.com/RohanR05/internNaki-",
     features: [
-      "Browse available jobs with filtering by location, company, or employment type",
-      "View detailed job descriptions, requirements, salary, and benefits",
-      "Register and login using email/password or Google OAuth",
+      "Browse jobs with filtering by location, company, or type",
+      "Detailed job descriptions with salary & benefits",
+      "Email/Google OAuth with NextAuth",
       "Live error messages for login and registration",
-      "Apply to jobs and navigate easily with 'Back to Jobs' buttons",
-      "Dark mode & light mode toggle with custom colors",
-      "Post new jobs with full details (title, company, description, requirements, salary, benefits, deadlines)",
-      "Manage job listings with role-based authentication and authorization",
-      "Tailwind CSS + DaisyUI + ShadCN UI for a clean, responsive interface",
-      "Light & Dark themes with custom brand colors",
+      "Apply to jobs with 'Back to Jobs' navigation",
+      "Light/Dark mode toggle with custom brand colors",
+      "Role-based authentication for job posting & management",
     ],
   },
   {
     id: "5",
     name: "English-Word",
-    image: img5, // import or assign an image/icon for this project
+    image: img5,
     techStack: ["React", "JavaScript", "HTML", "CSS"],
     description:
-      "A web app focused on English vocabulary / word learning, lookup, and practice—built to help users explore, test, and improve their word knowledge.",
-    liveLink: "https://englishwordbyr.netlify.app/", // replace with your actual live link
+      "A web app focused on English vocabulary / word learning, lookup, and practice.",
+    liveLink: "https://englishwordbyr.netlify.app/",
     githubClient: "https://github.com/RohanR05/English-Word",
     features: [
       "Search and lookup English words and definitions",
@@ -124,8 +212,9 @@ const projects = [
   },
 ];
 
-const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
+  const handleSelect = useCallback((project) => {
+    setSelectedProject(project);
+  }, []);
 
   return (
     <section className="py-10 max-w-7xl mx-auto my-16">
@@ -134,96 +223,12 @@ const Projects = () => {
       </h2>
       <div className="grid gap-8 lg:grid-cols-3 sm:grid-cols-1 mx-2">
         {projects.map((project, index) => (
-          <motion.div
+          <ProjectCard
             key={project.id}
-            className="bg-secondary shadow-2xl shadow-primary/80 rounded-2xl overflow-hidden flex flex-col"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.2, duration: 0.5, type: "spring" }}
-            whileHover={{
-              scale: 1.05,
-              boxShadow: "0 15px 30px rgba(0,0,0,0.2)",
-            }}
-          >
-            <img
-              src={project.image}
-              alt={project.name}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-5 flex flex-col flex-grow">
-              <h3 className="text-xl text-neutral font-bold mb-2">
-                {project.name}
-              </h3>
-              <p className="mb-3 text-primary flex-grow line-clamp-3">
-                {project.description}
-              </p>
-
-              <h4 className="font-semibold mb-2">🛠 Tech Stack:</h4>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.techStack.slice(0, 3).map((tech, i) => (
-                  <span
-                    key={i}
-                    className="bg-primary text-secondary px-2 py-1 rounded text-sm font-medium"
-                  >
-                    {tech}
-                  </span>
-                ))}
-                {project.techStack.length > 3 && (
-                  <span className="bg-neutral text-secondary px-2 py-1 rounded text-sm font-medium">
-                    +{project.techStack.length - 3} more
-                  </span>
-                )}
-              </div>
-
-              <h4 className="font-semibold mb-2">✨ Key Features:</h4>
-              <ul className="list-disc list-inside text-primary text-sm mb-4">
-                {project.features.slice(0, 3).map((feature, i) => (
-                  <li key={i}>{feature}</li>
-                ))}
-                {project.features.length > 3 && (
-                  <li className="italic text-neutral">
-                    +{project.features.length - 3} more...
-                  </li>
-                )}
-              </ul>
-
-              {/* Buttons */}
-              <div className="flex gap-2 items-center mt-4">
-                <motion.a
-                  href={project.liveLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex-1 flex justify-center items-center border border-primary p-3 rounded-lg text-primary font-medium hover:bg-primary/10 transition"
-                  whileHover={{ scale: 1.03 }}
-                >
-                  <FontAwesomeIcon
-                    icon={faUpRightFromSquare}
-                    className="mr-2"
-                  />
-                  Live Project
-                </motion.a>
-
-                <motion.button
-                  onClick={() => setSelectedProject(project)}
-                  className="border border-primary p-3 rounded-lg text-primary hover:bg-primary/10 transition"
-                  aria-label="View Project Details"
-                  whileHover={{ scale: 1.1 }}
-                >
-                  <FontAwesomeIcon icon={faInfoCircle} />
-                </motion.button>
-
-                <motion.a
-                  href={project.githubClient}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="border border-primary p-3 rounded-lg text-primary hover:bg-primary/10 transition"
-                  whileHover={{ scale: 1.1 }}
-                >
-                  <FontAwesomeIcon icon={faGithub} />
-                </motion.a>
-              </div>
-            </div>
-          </motion.div>
+            project={project}
+            index={index}
+            onSelect={handleSelect}
+          />
         ))}
       </div>
 
@@ -232,9 +237,9 @@ const Projects = () => {
         <dialog open className="modal">
           <motion.div
             className="modal-box max-w-3xl"
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.3 }}
           >
             <h3 className="text-2xl font-bold text-neutral mb-4">
               {selectedProject.name}
@@ -242,6 +247,7 @@ const Projects = () => {
             <img
               src={selectedProject.image}
               alt={selectedProject.name}
+              loading="lazy"
               className="rounded-lg mb-4"
             />
             <p className="text-primary mb-4">{selectedProject.description}</p>

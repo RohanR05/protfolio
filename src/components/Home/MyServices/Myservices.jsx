@@ -127,7 +127,7 @@ const Myservices = () => {
         {data.map((service, index) => (
   <motion.div
   key={service.id}
-  className="bg-accent p-5 rounded-2xl shadow-xl shadow-primary/40 cursor-pointer overflow-hidden group hover:text-black"
+  className="bg-secondary p-5 rounded-2xl shadow-xl shadow-primary/40 cursor-pointer overflow-hidden group hover:text-black"
   custom={index}
   initial="hidden"
   whileInView="visible"

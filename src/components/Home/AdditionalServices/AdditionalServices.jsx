@@ -75,7 +75,7 @@ const AdditionalServices = () => {
         {extraServices.map((service, index) => (
           <motion.div
             key={service.id}
-            className="bg-accent p-5 rounded-2xl shadow-xl shadow-primary/50 flex flex-col items-center text-center cursor-pointer"
+            className="bg-secondary p-5 rounded-2xl shadow-xl shadow-primary/50 flex flex-col items-center text-center cursor-pointer "
             custom={service.direction}
             initial="hidden"
             whileInView="visible"
