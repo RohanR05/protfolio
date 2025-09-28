@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTachometerAlt,
@@ -10,6 +10,15 @@ import {
 import { motion } from "framer-motion";
 
 const AdditionalServices = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const extraServices = [
     {
       id: "1",
@@ -41,7 +50,6 @@ const AdditionalServices = () => {
     },
   ];
 
-  // Variants for individual card animations
   const cardVariants = {
     hidden: (direction) => {
       switch (direction) {
@@ -72,48 +80,76 @@ const AdditionalServices = () => {
       </h2>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mx-4">
-        {extraServices.map((service, index) => (
-          <motion.div
-            key={service.id}
-            className="bg-secondary p-5 rounded-2xl shadow-xl shadow-primary/50 flex flex-col items-center text-center cursor-pointer "
-            custom={service.direction}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={cardVariants}
-            whileHover={{ y: -5, scale: 1.03, transition: { duration: 0.3 } }}
-          >
-            <div className="text-3xl text-neutral mb-3">
-              <FontAwesomeIcon icon={service.icon} />
+        {extraServices.map((service) =>
+          isMobile ? (
+            <div
+              key={service.id}
+              className="bg-secondary p-5 rounded-2xl shadow-xl shadow-primary/50 flex flex-col items-center text-center cursor-pointer w-full"
+            >
+              <div className="text-3xl text-neutral mb-3">
+                <FontAwesomeIcon icon={service.icon} />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+              <p className="text-primary/80">{service.description}</p>
             </div>
-            <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-            <p className="text-primary/80">{service.description}</p>
-          </motion.div>
-        ))}
+          ) : (
+            <motion.div
+              key={service.id}
+              className="bg-secondary p-5 rounded-2xl shadow-xl shadow-primary/50 flex flex-col items-center text-center cursor-pointer"
+              custom={service.direction}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={cardVariants}
+              whileHover={{ y: -5, scale: 1.03, transition: { duration: 0.3 } }}
+            >
+              <div className="text-3xl text-neutral mb-3">
+                <FontAwesomeIcon icon={service.icon} />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+              <p className="text-primary/80">{service.description}</p>
+            </motion.div>
+          )
+        )}
       </div>
 
       {/* Call to Action Section */}
-      <motion.div
-        className="md:w-2/3 lg:w-1/2 mx-auto mt-12 text-center p-8 bg-secondary rounded-2xl"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <h2 className="text-3xl font-bold mb-2">
-          Ready to Start Your Project?
-        </h2>
-        <p className="text-primary/80 mb-4">
-          Let's discuss your requirements and create something amazing together
-        </p>
-        <motion.button
-          className="inline-flex items-center gap-2 bg-primary text-secondary px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-primary/90 transition"
-          whileHover={{ scale: 1.05, rotate: 3 }}
-          whileTap={{ scale: 0.95 }}
+      {isMobile ? (
+        <div className="md:w-2/3 lg:w-1/2 mx-auto mt-12 text-center p-8 bg-secondary rounded-2xl">
+          <h2 className="text-3xl font-bold mb-2">
+            Ready to Start Your Project?
+          </h2>
+          <p className="text-primary/80 mb-4">
+            Let's discuss your requirements and create something amazing together
+          </p>
+          <button className="inline-flex items-center gap-2 bg-primary text-secondary px-6 py-3 rounded-lg font-semibold shadow-md">
+            Get a Free Consultation
+            <FontAwesomeIcon icon={faArrowRight} />
+          </button>
+        </div>
+      ) : (
+        <motion.div
+          className="md:w-2/3 lg:w-1/2 mx-auto mt-12 text-center p-8 bg-secondary rounded-2xl"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
         >
-          Get a Free Consultation
-          <FontAwesomeIcon icon={faArrowRight} />
-        </motion.button>
-      </motion.div>
+          <h2 className="text-3xl font-bold mb-2">
+            Ready to Start Your Project?
+          </h2>
+          <p className="text-primary/80 mb-4">
+            Let's discuss your requirements and create something amazing together
+          </p>
+          <motion.button
+            className="inline-flex items-center gap-2 bg-primary text-secondary px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-primary/90 transition"
+            whileHover={{ scale: 1.05, rotate: 3 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Get a Free Consultation
+            <FontAwesomeIcon icon={faArrowRight} />
+          </motion.button>
+        </motion.div>
+      )}
     </section>
   );
 };

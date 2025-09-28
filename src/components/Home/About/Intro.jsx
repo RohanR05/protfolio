@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const Intro = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Full animation for larger screens
   const fadeUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+
+  // Simpler animation for small screens
+  const simpleFade = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.5 } },
   };
 
   const sections = [
@@ -71,11 +87,11 @@ const Intro = () => {
 
   return (
     <div>
-      <div>
-        <h2 className="text-primary font-bold text-center text-4xl mb-4">
-          Some Info
-        </h2>
+      <h2 className="text-primary font-bold text-center text-4xl mb-4">
+        Some Info
+      </h2>
 
+      <div className="mx-4">
         {sections.map((section, idx) => (
           <motion.div
             key={idx}
@@ -83,7 +99,7 @@ const Intro = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            variants={fadeUp}
+            variants={isMobile ? simpleFade : fadeUp}
           >
             <h3 className="text-3xl font-semibold mb-3 text-neutral">{section.title}</h3>
             <p className="leading-relaxed text-primary font-medium text-lg">
