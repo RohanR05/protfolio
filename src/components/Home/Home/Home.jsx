@@ -104,7 +104,7 @@ const Home = () => {
   if (loading) return <Loading />;
 
   return (
-    <div className="relative my-8 md:my-16 m-1">
+    <div className="relative my-8 md:my-16 mx-auto m-1">
       {/* Banner */}
       <SectionWrapper animation={bannerAnim}>
         <Banner />

@@ -120,7 +120,7 @@ const Navbar = () => {
             // add your resume link here
             target="_blank"
             rel="noopener noreferrer"
-            className="btn border-white hidden md:inline-block  bg-gradient-to-r from-[#051622] to-[#24583C] text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:from-[#24583C] hover:to-[#051622] transition duration-300"
+            className="btn border-secondary hidden md:inline-block  bg-gradient-to-r from-neutral to-primary text-accent font-bold px-6 py-2 rounded-lg shadow-md hover:from-primary hover:to-neutral transition duration-300"
           >
             Resume
           </a>
