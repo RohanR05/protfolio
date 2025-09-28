@@ -125,22 +125,20 @@ const Myservices = () => {
 
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mx-4">
         {data.map((service, index) => (
-  <motion.div
-  key={service.id}
-  className="bg-secondary p-5 rounded-2xl shadow-xl shadow-primary/40 cursor-pointer overflow-hidden group hover:text-black"
-  custom={index}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true, amount: 0.3 }}
-  variants={cardVariants}
-  whileHover={{
-    y: -8,
-    background: `linear-gradient(135deg, ${service.hoverGradient[0]}, ${service.hoverGradient[1]})`,
-    transition: { duration: 0.5 },
-  }}
->
-
-
+          <motion.div
+            key={service.id}
+            className="bg-[#f8f8ec] p-5 rounded-2xl shadow-xl shadow-primary/40 cursor-pointer overflow-hidden group"
+            custom={index}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={cardVariants}
+            whileHover={{
+              y: -8,
+              background: `linear-gradient(135deg, ${service.hoverGradient[0]}, ${service.hoverGradient[1]})`,
+              transition: { duration: 0.5 },
+            }}
+          >
             {/* Icon */}
             <motion.div
               className={`p-4 rounded-lg mb-3 inline-block bg-gradient-to-r ${service.gradient} text-white`}
@@ -152,13 +150,13 @@ const Myservices = () => {
             </motion.div>
 
             {/* Title */}
-            <h3 className="text-xl font-bold text-primary/80">
+            <h3 className="text-xl font-bold text-[#ff6b01]">
               {service.title}
             </h3>
             {/* Description */}
-            <p className="opacity-90 mb-3">{service.description}</p>
+            <p className="opacity-90 text-black mb-3">{service.description}</p>
             {/* Types */}
-            <ul className="list-disc list-inside opacity-70 font-medium space-y-1">
+            <ul className="list-disc list-inside space-y-1 text-[#24583c] font-semibold">
               {service.types.map((type, idx) => (
                 <li key={idx}>{type}</li>
               ))}
