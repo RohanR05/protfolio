@@ -5,8 +5,8 @@ import img2 from "../../../assets/web11.png";
 const Certificate = () => {
   return (
     <div className="flex flex-col items-center justify-center my-16">
-      <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center">
-        My Achievements 🏆
+      <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+        My <span className="text-neutral">Achievements </span>
       </h2>
 
       <div className="grid md:grid-cols-2 gap-8 w-full max-w-7xl">
@@ -46,10 +46,10 @@ const Certificate = () => {
             />
           </figure>
           <div className="card-body items-center text-center">
-            <h3 className="card-title text-primary font-semibold">
+            <h3 className="card-title text-neutral font-semibold">
               Web Development Completion
             </h3>
-            <p className="text-sm text-base-content/70">
+            <p className="text-sm text-primary/80">
               Successfully completed the Full Stack Web Development course from
               Programming Hero, mastering MERN stack and modern web practices.
             </p>
@@ -57,7 +57,7 @@ const Certificate = () => {
         </div>
       </div>
 
-      <p className="mt-12 text-center text-base-content/60">
+      <p className="mt-12 text-center text-primary">
         “Hard work pays off — this is just the beginning.”
       </p>
     </div>
