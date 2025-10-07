@@ -15,14 +15,14 @@ const Education = () => {
   const educations = [
     {
       title: "Secondary School Certificate (SSC) - Science",
-      institution: "Sammilani Secondary School",
+      institution: "Sammilani Secondary School Chalitatala, Narail",
       year: "2020",
       icon: <FaSchool className="text-3xl text-primary mb-2" />,
     },
     {
       title: "Higher Secondary Certificate (HSC) - Science",
       institution: "Abdul High City College, Narail",
-      year: "2020",
+      year: "2022",
       icon: <FaGraduationCap className="text-3xl text-primary mb-2" />,
     },
     {
