@@ -10,6 +10,7 @@ import Testimonial from "../Testimonial/Testimonial";
 import Loading from "../Loading/Loading";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Certificate from "../Certificate/Certificate";
 
 // Hook to check if screen is small (sm breakpoint)
 const useIsSmallScreen = () => {
@@ -121,7 +122,7 @@ const Home = () => {
       <SectionWrapper animation={educationAnim}>
         <Education />
       </SectionWrapper>
-
+      <Certificate></Certificate>
       {/* Projects */}
       <div id="projects">
         <SectionWrapper animation={projectsAnim}>
