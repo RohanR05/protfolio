@@ -34,7 +34,7 @@ const Education = () => {
   ];
 
   return (
-    <section className="mx-auto mt-16">
+    <section className="mx-auto">
       <h2 className="text-4xl font-bold mb-10 text-center">
         Educational <span className="text-neutral">Qualification</span>
       </h2>

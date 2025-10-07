@@ -74,7 +74,7 @@ const AdditionalServices = () => {
   };
 
   return (
-    <section className="mx-auto py-10">
+    <section className="mx-auto">
       <h2 className="text-4xl font-bold text-center mb-6">
         Additional <span className="text-neutral">Services</span>
       </h2>

@@ -71,7 +71,7 @@ const Contact = () => {
   ];
 
   return (
-    <section className="max-w-7xl mx-auto p-8 bg-secondary rounded-2xl shadow-lg mt-12">
+    <section className="max-w-7xl mx-auto p-8 bg-secondary rounded-2xl shadow-lg">
       <h2 className="text-4xl font-extrabold mb-10 text-center text-primary">
         Contact Me <span className="text-neutral">📞</span>
       </h2>

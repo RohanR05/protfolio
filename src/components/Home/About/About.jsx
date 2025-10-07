@@ -39,7 +39,7 @@ const About = () => {
   };
 
   return (
-    <div className="my-8 md:my-12">
+    <div className="">
       <h2 className="text-4xl font-bold text-center">
         About <span className="text-neutral">Me</span>
       </h2>

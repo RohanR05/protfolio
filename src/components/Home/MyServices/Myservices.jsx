@@ -115,7 +115,7 @@ const Myservices = () => {
   };
 
   return (
-    <section className="max-w-7xl mx-auto py-10">
+    <section className="max-w-7xl mx-auto">
       <h2 className="text-4xl font-bold text-center mb-4">
         My <span className="text-neutral">Services</span>
       </h2>

@@ -105,7 +105,7 @@ const Home = () => {
   if (loading) return <Loading />;
 
   return (
-    <div className="relative my-8 md:my-16 mx-auto m-1">
+    <div className="relative my-8 md:my-16 mx-auto m-1 space-y-8 md:space-y-12 lg:space-y-16">
       {/* Banner */}
       <SectionWrapper animation={bannerAnim}>
         <Banner />
@@ -116,6 +116,11 @@ const Home = () => {
         <SectionWrapper animation={aboutAnim}>
           <About />
         </SectionWrapper>
+      </div>   {/* Projects */}
+      <div id="projects">
+        <SectionWrapper animation={projectsAnim}>
+          <Projects />
+        </SectionWrapper>
       </div>
 
       {/* Education */}
@@ -123,12 +128,7 @@ const Home = () => {
         <Education />
       </SectionWrapper>
       <Certificate></Certificate>
-      {/* Projects */}
-      <div id="projects">
-        <SectionWrapper animation={projectsAnim}>
-          <Projects />
-        </SectionWrapper>
-      </div>
+   
 
       {/* My Services */}
       <div id="myServices">

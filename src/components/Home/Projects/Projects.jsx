@@ -209,7 +209,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <section className="py-10 max-w-7xl mx-auto my-16">
+    <section className="max-w-7xl mx-auto">
       <h2 className="text-4xl font-bold text-center mb-10">
         Featured <span className="text-neutral">Projects</span>
       </h2>
