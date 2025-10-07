@@ -34,7 +34,7 @@ const Certificate = () => {
         <motion.div
           whileHover={{ scale: 1.03 }}
           transition={{ type: "spring", stiffness: 200 }}
-          className="card bg-secondary shadow-xl border border-primary/20 hover:shadow-primary/50 transition-all duration-300"
+          className="card bg-secondary shadow-xl shadow-primary/50 border border-primary/20 hover:shadow-neutral/50 transition-all duration-300"
         >
           <figure className="px-4 pt-4">
             <motion.img
@@ -60,7 +60,7 @@ const Certificate = () => {
         <motion.div
           whileHover={{ scale: 1.03 }}
           transition={{ type: "spring", stiffness: 200 }}
-          className="card bg-secondary shadow-xl border border-secondary/20 hover:shadow-secondary/50 transition-all duration-300"
+          className="card bg-secondary shadow-xl shadow-primary/50 border border-secondary/40 hover:shadow-neutral/50 transition-all duration-300"
         >
           <figure className="px-4 pt-4">
             <motion.img

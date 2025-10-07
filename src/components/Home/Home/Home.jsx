@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Certificate from "../Certificate/Certificate";
 
-// Hook to check if screen is small (sm breakpoint)
+// ✅ Hook to check if screen is small (sm breakpoint)
 const useIsSmallScreen = () => {
   const [isSmall, setIsSmall] = React.useState(false);
 
@@ -29,7 +29,7 @@ const useIsSmallScreen = () => {
   return isSmall;
 };
 
-// Section wrapper for scroll animations
+// ✅ Section wrapper for scroll animations
 const SectionWrapper = ({ children, animation, stagger = false }) => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
   const isSmall = useIsSmallScreen();
@@ -102,6 +102,20 @@ const Home = () => {
     []
   );
 
+  // ✅ Certificate animation
+  const certificateAnim = useMemo(
+    () => ({
+      hidden: { opacity: 0, y: 80, scale: 0.95 },
+      visible: {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        transition: { duration: 0.8, ease: "easeOut" },
+      },
+    }),
+    []
+  );
+
   if (loading) return <Loading />;
 
   return (
@@ -116,7 +130,9 @@ const Home = () => {
         <SectionWrapper animation={aboutAnim}>
           <About />
         </SectionWrapper>
-      </div>   {/* Projects */}
+      </div>
+
+      {/* Projects */}
       <div id="projects">
         <SectionWrapper animation={projectsAnim}>
           <Projects />
@@ -127,8 +143,13 @@ const Home = () => {
       <SectionWrapper animation={educationAnim}>
         <Education />
       </SectionWrapper>
-      <Certificate></Certificate>
-   
+
+      {/* ✅ Certificate Section */}
+      <div id="certificate">
+        <SectionWrapper animation={certificateAnim}>
+          <Certificate />
+        </SectionWrapper>
+      </div>
 
       {/* My Services */}
       <div id="myServices">
