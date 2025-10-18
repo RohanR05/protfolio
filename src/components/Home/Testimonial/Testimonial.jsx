@@ -24,7 +24,7 @@ const Testimonial = () => {
     },
     {
       id: "3",
-      title: "Open Source Contributions",
+      title: "Group Projects",
       description: "1+",
       icon: faCodeBranch,
     },
@@ -50,7 +50,7 @@ const Testimonial = () => {
         {testimonials.map((item, index) => (
           <motion.div
             key={item.id}
-            className="bg-secondary p-5 rounded-2xl shadow-xl flex flex-col items-center cursor-pointer"
+            className="bg-secondary p-5 rounded-2xl  shadow-primary/40 shadow-xl flex hover:shadow-neutral/40 flex-col items-center cursor-pointer border-l-4 border-neutral"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

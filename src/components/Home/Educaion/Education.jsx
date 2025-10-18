@@ -43,7 +43,7 @@ const Education = () => {
         {educations.map((edu, idx) => (
           <motion.div
             key={idx}
-            className="bg-secondary rounded-xl p-6 shadow-xl shadow-primary/60 text-center"
+            className="bg-secondary rounded-xl p-6 shadow-xl shadow-primary/60 text-center border-l-4 border-neutral hover:border-primary"
             variants={cardVariants}
             initial="hidden"
             whileInView="visible"

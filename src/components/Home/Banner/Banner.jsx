@@ -56,7 +56,7 @@ const Banner = () => {
               aria-label="Facebook"
             >
               <FontAwesomeIcon
-                className="border border-primary p-1.5 rounded-lg text-primary bg-neutral/30 hover:bg-primary hover:text-neutral transition"
+                className="border border-primary p-1.5 rounded-lg text-primary bg-neutral hover:bg-primary hover:text-neutral transition"
                 icon={faFacebook}
               />
             </a>
@@ -69,7 +69,7 @@ const Banner = () => {
               aria-label="GitHub"
             >
               <FontAwesomeIcon
-                className="border border-primary p-1.5 rounded-lg text-primary bg-neutral/30 hover:bg-primary hover:text-neutral transition"
+                className="border border-primary p-1.5 rounded-lg text-primary bg-neutral  hover:bg-primary hover:text-neutral transition"
                 icon={faGithub}
               />
             </a>
@@ -82,7 +82,7 @@ const Banner = () => {
               aria-label="LinkedIn"
             >
               <FontAwesomeIcon
-                className="border border-primary p-1.5 rounded-lg text-primary bg-neutral/30 hover:bg-primary hover:text-neutral transition"
+                className="border border-primary p-1.5 rounded-lg text-primary bg-neutral hover:bg-primary hover:text-neutral transition"
                 icon={faLinkedin}
               />
             </a>
@@ -95,7 +95,7 @@ const Banner = () => {
               aria-label="WhatsApp"
             >
               <FontAwesomeIcon
-                className="border border-primary p-1.5 rounded-lg text-primary bg-neutral/30 hover:bg-primary hover:text-neutral transition"
+                className="border border-primary p-1.5 rounded-lg text-primary bg-neutral hover:bg-primary hover:text-neutral transition"
                 icon={faWhatsapp}
               />
             </a>
