@@ -25,45 +25,45 @@ const Navbar = () => {
       <li>
         <button
           onClick={() => handleScroll("about")}
-          className="text-neutral font-bold flex items-center gap-2"
+          className="text-primary font-bold flex items-center gap-2"
         >
-          <FontAwesomeIcon icon={faUser} />
+          <FontAwesomeIcon icon={faUser} className="text-neutral" />
           About Me
         </button>
       </li>
       <li>
         <button
           onClick={() => handleScroll("projects")}
-          className="text-neutral font-bold flex items-center gap-2"
+          className="text-primary font-bold flex items-center gap-2"
         >
-          <FontAwesomeIcon icon={faFolderOpen} />
+          <FontAwesomeIcon icon={faFolderOpen} className="text-neutral" />
           Projects
         </button>
       </li>
       <li>
         <button
           onClick={() => handleScroll("myServices")}
-          className="text-neutral font-bold flex items-center gap-2"
+          className="text-primary font-bold flex items-center gap-2"
         >
-          <FontAwesomeIcon icon={faLaptopCode} />
+          <FontAwesomeIcon icon={faLaptopCode} className="text-neutral" />
           My Services
         </button>
       </li>
       <li>
         <button
           onClick={() => handleScroll("testimonials")}
-          className="text-neutral font-bold flex items-center gap-2"
+          className="text-primary font-bold flex items-center gap-2"
         >
-          <FontAwesomeIcon icon={faUsers} />
+          <FontAwesomeIcon icon={faUsers} className="text-neutral" />
           Client Testimonials
         </button>
       </li>
       <li>
         <button
           onClick={() => handleScroll("contact")}
-          className="text-neutral font-bold flex items-center gap-2"
+          className="text-primary font-bold flex items-center gap-2"
         >
-          <FontAwesomeIcon icon={faEnvelope} />
+          <FontAwesomeIcon icon={faEnvelope} className="text-neutral" />
           Contact Me
         </button>
       </li>

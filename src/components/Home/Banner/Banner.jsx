@@ -10,7 +10,7 @@ import { Typewriter } from "react-simple-typewriter";
 
 const Banner = () => {
   return (
-    <div className="bg-gradient-to-l from-primary/0 to-neutral/0 text-accent flex flex-col md:flex-row items-center md:justify-evenly p-4 md:py-8">
+    <div className="bg-gradient-to-l from-primary/0 to-neutral/0 text-accent flex flex-col md:flex-row items-center md:justify-between p-4 md:py-8">
       {/* Image */}
       <div className="flex-shrink-0 mb-6 md:mb-0">
         <img
