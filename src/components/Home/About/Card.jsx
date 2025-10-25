@@ -41,7 +41,7 @@ const Card = () => {
           whileHover={{ scale: 1.05, boxShadow: "0 10px 20px rgba(0,0,0,0.2)" }}
         >
           <h2 className="text-2xl">{d.icon}</h2>
-          <p className="text-neutral text-3xl font-semibold">{d.number}</p>
+          <p className="text-info text-3xl font-semibold">{d.number}</p>
           <p className="text font-medium text-primary/90">{d.title}</p>
         </motion.div>
       ))}

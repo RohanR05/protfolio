@@ -17,17 +17,29 @@ const About = () => {
   // Variants
   const fadeUp = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
   };
 
   const slideLeft = {
     hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.7, ease: "easeOut" },
+    },
   };
 
   const slideRight = {
     hidden: { opacity: 0, x: 50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.7, ease: "easeOut" },
+    },
   };
 
   const iconBounce = {
@@ -43,7 +55,7 @@ const About = () => {
       <h2 className="text-4xl font-bold text-center">
         About <span className="text-neutral">Me</span>
       </h2>
-      <p className="text-center text-primary/80 mt-3">
+      <p className="text-center text-info/80 mt-3">
         A passionate Full-Stack / MERN Stack Developer with a strong foundation
         in modern web technologies
       </p>
