@@ -10,7 +10,7 @@ import { Typewriter } from "react-simple-typewriter";
 
 const Banner = () => {
   return (
-    <div className="bg-gradient-to-l from-primary/80 to-secondary text-accent flex flex-col md:flex-row items-center md:justify-evenly p-4 md:p-8 shadow shadow-neutral">
+    <div className="bg-gradient-to-l from-primary/0 to-neutral/0 text-accent flex flex-col md:flex-row items-center md:justify-evenly p-4 md:py-8">
       {/* Image */}
       <div className="flex-shrink-0 mb-6 md:mb-0">
         <img
@@ -22,7 +22,7 @@ const Banner = () => {
 
       {/* Text */}
       <div className="md:ml-8 text-center md:text-left max-w-xl">
-        <h1 className="text-3xl md:text-4xl font-bold mb-4">
+        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-info">
           Hi, I’m{" "}
           <span className="text-3xl md:text-5xl text-neutral">
             <Typewriter
@@ -38,10 +38,10 @@ const Banner = () => {
         </h1>
 
         <p className="text-2xl md:text-3xl font-semibold text-primary mb-3">
-          💻 MERN Stack Developer 🚀
+          &lt; MERN Stack Developer /&gt;
         </p>
 
-        <p className="text-lg mb-5 text-primary">
+        <p className="text-lg mb-5 text-info">
           Passionate about building modern, scalable web applications with clean
           UI ✨ and efficient backend architecture ⚡.
         </p>

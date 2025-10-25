@@ -12,7 +12,8 @@ body {
   --color-primary: #24583C;
   --color-secondary: #F8F8EC;
    --color-accent:#ffffff; 
-   --color-neutral:#FF6B01
+   --color-neutral:#FF6B01;
+   --color-info:#000000
 }
 
 /* Dark theme */
@@ -22,6 +23,7 @@ body {
   --color-secondary:#051622;
    --color-accent:#000000;
    --color-neutral:#FFE900;
+   --color-info:#ffffff
 }
 
 
