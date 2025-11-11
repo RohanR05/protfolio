@@ -14,7 +14,7 @@ const Banner = () => {
       {/* Image */}
       <div className="flex-shrink-0 mb-6 md:mb-0">
         <img
-          className="w-48 h-48 md:w-72 md:h-72 lg:w-96 lg:h-96 object-cover rounded-full border-4 border-primary shadow-lg"
+          className="w-60 h-60 md:w-72 md:h-72 lg:w-96 lg:h-96 object-cover rounded-full border-4 border-primary shadow-lg"
           src={img}
           alt="Profile"
         />
