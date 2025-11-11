@@ -5,7 +5,6 @@ import {
   faUser,
   faFolderOpen,
   faLaptopCode,
-  faUsers,
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -25,45 +24,37 @@ const Navbar = () => {
       <li>
         <button
           onClick={() => handleScroll("about")}
-          className="text-primary font-bold flex items-center gap-2"
+          className="text-info font-bold flex items-center gap-2"
         >
-          <FontAwesomeIcon icon={faUser} className="text-neutral" />
+          <FontAwesomeIcon icon={faUser} className="text-primary" />
           About Me
         </button>
       </li>
       <li>
         <button
           onClick={() => handleScroll("projects")}
-          className="text-primary font-bold flex items-center gap-2"
+          className="text-info font-bold flex items-center gap-2"
         >
-          <FontAwesomeIcon icon={faFolderOpen} className="text-neutral" />
+          <FontAwesomeIcon icon={faFolderOpen} className="text-primary" />
           Projects
         </button>
       </li>
       <li>
         <button
           onClick={() => handleScroll("myServices")}
-          className="text-primary font-bold flex items-center gap-2"
+          className="text-info font-bold flex items-center gap-2"
         >
-          <FontAwesomeIcon icon={faLaptopCode} className="text-neutral" />
+          <FontAwesomeIcon icon={faLaptopCode} className="text-primary" />
           My Services
         </button>
       </li>
-      <li>
-        <button
-          onClick={() => handleScroll("testimonials")}
-          className="text-primary font-bold flex items-center gap-2"
-        >
-          <FontAwesomeIcon icon={faUsers} className="text-neutral" />
-          Client Testimonials
-        </button>
-      </li>
+
       <li>
         <button
           onClick={() => handleScroll("contact")}
-          className="text-primary font-bold flex items-center gap-2"
+          className="text-info font-bold flex items-center gap-2"
         >
-          <FontAwesomeIcon icon={faEnvelope} className="text-neutral" />
+          <FontAwesomeIcon icon={faEnvelope} className="text-primary" />
           Contact Me
         </button>
       </li>
@@ -104,14 +95,14 @@ const Navbar = () => {
           </div>
 
           {/* Brand */}
-          <p className="text-2xl md:text-3xl font-bold text-primary cursor-pointer">
-            Rohan<span className="text-neutral">R05</span>..
+          <p className="text-2xl md:text-3xl font-bold text-info cursor-pointer">
+            Rohan<span className="text-primary">R05</span>..
           </p>
         </div>
 
         {/* Navbar Center for large screens */}
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{links}</ul>
+          <ul className="menu menu-horizontal px-1 text-[17px]">{links}</ul>
         </div>
 
         {/* Navbar End */}
@@ -119,10 +110,10 @@ const Navbar = () => {
           <Theme />
 
           <a
-            href="https://drive.google.com/file/d/180oEGkCsjBwAmAoht8vH36QYI19XcP4M/view?usp=sharing"
+            href="https://drive.google.com/file/d/1pQNXuHtsJMpAC9OUGX-KrdKq5tHJrnCm/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn border-secondary hidden md:inline-block bg-gradient-to-r from-neutral to-primary text-accent font-bold px-6 py-2 rounded-lg shadow-md hover:from-primary hover:to-neutral transition duration-300"
+            className="btn border-secondary hidden md:inline-block bg-gradient-to-r from-info to-neutral text-accent font-bold px-6 py-2 rounded-lg shadow-md hover:from-primary hover:to-info transition duration-300"
           >
             Resume
           </a>
