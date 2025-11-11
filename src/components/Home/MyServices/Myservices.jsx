@@ -117,27 +117,17 @@ const Myservices = () => {
   return (
     <section className="max-w-7xl mx-auto">
       <h2 className="text-4xl font-bold text-center mb-4">
-        My <span className="text-neutral">Services</span>
+        My <span className="text-primary">Services</span>
       </h2>
-      <p className="text-center text-primary mb-10">
+      <p className="text-center text-info mb-10">
         Comprehensive web development services to bring your ideas to life
       </p>
 
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mx-4">
-        {data.map((service, index) => (
+        {data.map((service) => (
           <motion.div
             key={service.id}
-            className="bg-[#f8f8ec] p-5 rounded-2xl shadow-xl shadow-primary/40 cursor-pointer overflow-hidden group"
-            custom={index}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={cardVariants}
-            whileHover={{
-              y: -8,
-              background: `linear-gradient(135deg, ${service.hoverGradient[0]}, ${service.hoverGradient[1]})`,
-              transition: { duration: 0.5 },
-            }}
+            className="bg-secondary p-5 rounded-2xl shadow-xl shadow-neutral/20 cursor-pointer hover:scale-105 hover:shadow-primary/20 transition overflow-hidden group"
           >
             {/* Icon */}
             <motion.div
@@ -150,13 +140,13 @@ const Myservices = () => {
             </motion.div>
 
             {/* Title */}
-            <h3 className="text-xl font-bold text-[#ff6b01]">
+            <h3 className="text-xl font-bold text-primary">
               {service.title}
             </h3>
             {/* Description */}
-            <p className="opacity-90 text-black mb-3">{service.description}</p>
+            <p className="opacity-90 text-info mb-3">{service.description}</p>
             {/* Types */}
-            <ul className="list-disc list-inside space-y-1 text-[#24583c] font-semibold">
+            <ul className="list-disc list-inside space-y-1 text-info font-semibold">
               {service.types.map((type, idx) => (
                 <li key={idx}>{type}</li>
               ))}
