@@ -19,7 +19,7 @@ const Certificate = () => {
         viewport={{ once: true }}
         className="text-3xl md:text-4xl font-bold mb-8 text-center"
       >
-        My <span className="text-neutral">Achievements </span>
+        My <span className="text-primary">Achievements </span>
       </motion.h2>
 
       {/* Certificates Grid */}
@@ -34,7 +34,7 @@ const Certificate = () => {
         <motion.div
           whileHover={{ scale: 1.03 }}
           transition={{ type: "spring", stiffness: 200 }}
-          className="card bg-secondary shadow-xl shadow-primary/50 border border-primary/20 hover:shadow-neutral/50 transition-all duration-300"
+          className="card bg-secondary shadow-xl shadow-neutral/30 border border-primary/20 hover:shadow-primary/30 transition-all duration-300"
         >
           <figure className="px-4 pt-4">
             <motion.img
@@ -46,10 +46,10 @@ const Certificate = () => {
             />
           </figure>
           <div className="card-body items-center text-center">
-            <h3 className="card-title text-neutral font-semibold">
+            <h3 className="card-title text-primary font-semibold">
               Black Belt Certificate
             </h3>
-            <p className="text-sm text-primary/80">
+            <p className="text-sm text-info">
               Awarded by Programming Hero for completing all 12 assignments,
               mini projects, mock interview, and final project with excellence.
             </p>
@@ -60,7 +60,7 @@ const Certificate = () => {
         <motion.div
           whileHover={{ scale: 1.03 }}
           transition={{ type: "spring", stiffness: 200 }}
-          className="card bg-secondary shadow-xl shadow-primary/50 border border-secondary/40 hover:shadow-neutral/50 transition-all duration-300"
+          className="card bg-secondary shadow-xl shadow-neutral/30 border border-secondary/40 hover:shadow-primary/30 transition-all duration-300"
         >
           <figure className="px-4 pt-4">
             <motion.img
@@ -72,10 +72,10 @@ const Certificate = () => {
             />
           </figure>
           <div className="card-body items-center text-center">
-            <h3 className="card-title text-neutral font-semibold">
+            <h3 className="card-title text-primary font-semibold">
               Web Development Completion
             </h3>
-            <p className="text-sm text-primary/80">
+            <p className="text-sm text-info">
               Successfully completed the Full Stack Web Development course from
               Programming Hero, mastering MERN stack and modern web practices.
             </p>

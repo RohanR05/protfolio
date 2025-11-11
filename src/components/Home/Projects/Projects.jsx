@@ -28,7 +28,7 @@ const ProjectCard = React.memo(({ project, index, onSelect }) => {
   return (
     <motion.div
       key={project.id}
-      className="bg-secondary shadow-xl shadow-primary/40 hover:shadow-neutral/40 rounded-2xl overflow-hidden flex flex-col"
+      className="bg-secondary shadow-xl shadow-neutral/20 hover:shadow-primary/30 rounded-2xl overflow-hidden flex flex-col"
       initial="hidden"
       animate="visible"
       variants={variant}
