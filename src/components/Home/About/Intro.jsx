@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHandSparkles,
+  faRocket,
+  faLightbulb,
+  faFutbol,
+  faStar,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Intro = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -11,13 +19,16 @@ const Intro = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Full animation for larger screens
+  // Animations
   const fadeUp = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
   };
 
-  // Simpler animation for small screens
   const simpleFade = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { duration: 0.5 } },
@@ -25,61 +36,62 @@ const Intro = () => {
 
   const sections = [
     {
-      title: "👋 Introduction",
+      icon: faHandSparkles,
+      title: "Introduction",
       content: (
         <>
-          Hi! I’m <strong className="text-2xl text-primary">Rohan Kabir</strong>, a
-          passionate MERN Stack Developer 💻 with a love for crafting clean,
-          scalable web applications. I’m also pursuing a BBA degree 🎓. In
-          school, I used to lead prayers 🙏 and serve as a mentor — helping
-          others grow.
+          Hi! I’m <strong>Rohan Kabir</strong>, a passionate MERN Stack
+          Developer with a love for crafting clean, scalable web applications.
+          I’m also pursuing a BBA degree. During school, I led prayers and
+          served as a mentor, helping others grow.
         </>
       ),
     },
     {
-      title: "🚀 My Programming Journey",
+      icon: faRocket,
+      title: "My Programming Journey",
       content: (
         <>
-          My programming journey began a few years ago when I discovered the
-          power of JavaScript ⚡. I started learning HTML, CSS, Tailwind CSS,
-          and JavaScript from YouTube tutorials 📺. Later, I completed a
-          course with Programming Hero 🚀. Now, I am a MERN Stack Developer,
-          continuously growing and sharpening my skills 📚.
+          My programming journey began when I discovered the power of
+          JavaScript. I started learning HTML, CSS, Tailwind CSS, and JavaScript
+          through YouTube tutorials. Later, I completed a course with
+          Programming Hero. Now, I’m a MERN Stack Developer continuously
+          sharpening my skills.
         </>
       ),
     },
     {
-      title: "💡 The Type of Work I Enjoy",
+      icon: faLightbulb,
+      title: "The Type of Work I Enjoy",
       content: (
         <>
           I enjoy solving complex problems, optimizing code, and exploring new
-          technologies 🔍. Whether designing beautiful UIs with React or
-          building robust REST APIs with Node.js and Express, I love making
-          life easier for users through efficient solutions.
+          technologies. Whether designing elegant UIs with React or building
+          robust REST APIs with Node.js and Express, I love creating efficient,
+          user-friendly solutions.
         </>
       ),
     },
     {
-      title: "⚽ Hobbies & Interests Outside Programming",
+      icon: faFutbol,
+      title: "Hobbies & Interests Outside Programming",
       content: (
         <>
-          Outside programming, I’m passionate about playing volleyball 🏐,
-          analyzing football matches ⚽, and farming 🌱 — activities that keep
-          me balanced and inspired.
+          Outside programming, I’m passionate about playing volleyball,
+          analyzing football matches, and spending time farming — activities
+          that keep me balanced and inspired.
         </>
       ),
     },
     {
-      title: "🌟 About My Personality",
+      icon: faStar,
+      title: "About My Personality",
       content: (
         <>
-          I have a calm and composed mind, strong problem-solving skills, and
-          the ability to handle tough situations thoughtfully. With nearly a
-          year of experience as a Mass Manager and former Scout, I’ve honed
-          leadership and organizational skills, including directing school
-          prayers in front of 650+ students. I thrive in collaborative
-          environments and approach challenges with patience, focus, and
-          responsibility 🤝.
+          I have a calm and thoughtful mindset with strong problem-solving and
+          leadership skills. With experience as a Mass Manager and Scout, I’ve
+          led prayers for 650+ students and developed patience, focus, and
+          responsibility in every challenge.
         </>
       ),
     },
@@ -87,7 +99,7 @@ const Intro = () => {
 
   return (
     <div>
-      <h2 className="text-primary font-bold text-center text-4xl mb-4">
+      <h2 className="text-neutral font-bold text-center text-4xl mb-4">
         Some Info
       </h2>
 
@@ -101,8 +113,11 @@ const Intro = () => {
             viewport={{ once: true }}
             variants={isMobile ? simpleFade : fadeUp}
           >
-            <h3 className="text-3xl font-semibold mb-3 text-neutral">{section.title}</h3>
-            <p className="leading-relaxed text-primary font-medium text-lg">
+            <h3 className="text-3xl font-semibold mb-3 text-primary flex items-center gap-2">
+              <FontAwesomeIcon icon={section.icon} className="text-primary" />
+              {section.title}
+            </h3>
+            <p className="leading-relaxed text-info font-medium text-lg">
               {section.content}
             </p>
           </motion.div>

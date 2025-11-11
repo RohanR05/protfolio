@@ -26,7 +26,7 @@ const Banner = () => {
           Rohan Kabir
         </h1>
 
-        <p className="text-2xl md:text-3xl font-semibold text-primary mb-3">
+        <p className="text-2xl md:text-3xl text-center font-semibold text-primary mb-3">
           &lt;
           <span className="text-info">
             <Typewriter
@@ -46,13 +46,13 @@ const Banner = () => {
           /&gt;
         </p>
 
-        <p className="text-lg mb-5 text-info">
+        <p className="text-lg mb-5 text-info text-center">
           Passionate about building modern, scalable web applications with clean
           UI and efficient backend architecture.
         </p>
 
         {/* Social Icons */}
-        <ul className="flex flex-wrap gap-3 md:gap-6 text-2xl mb-6">
+        <ul className="flex items-center justify-center flex-wrap gap-3 md:gap-6 text-2xl mb-6">
           <li>
             <a
               href="https://www.facebook.com/rohan.kabir.877108"
