@@ -157,7 +157,7 @@ const Skills = () => {
       {sections.map((section, idx) => (
         <motion.div
           key={idx}
-          className="mb-8 bg-accent py-8 px-4 rounded-2xl shadow-xl shadow-neutral/20 border border-accent hover:border-primary/40"
+          className="mb-8 bg-secondary py-8 px-4 rounded-2xl shadow-xl shadow-neutral/20 border border-primary/20 hover:border-primary/40"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}

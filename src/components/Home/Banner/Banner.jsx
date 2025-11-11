@@ -22,7 +22,7 @@ const Banner = () => {
 
       {/* Text */}
       <div className="md:ml-8 text-center md:text-left max-w-4xl">
-        <h1 className="text-5xl md:text-7xl lg:text-9xl font-bold mb-4 md:mb-16 text-info text-fade-bottom">
+        <h1 className="text-5xl md:text-7xl lg:text-9xl font-bold mb-4 md:mb-16 text-primary text-fade-bottom">
           Rohan Kabir
         </h1>
 

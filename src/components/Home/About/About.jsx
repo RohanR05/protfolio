@@ -53,7 +53,7 @@ const About = () => {
   return (
     <div className="">
       <h2 className="text-4xl font-bold text-center">
-        About <span className="text-neutral">Me</span>
+        About <span className="text-primary">Me</span>
       </h2>
       <p className="text-center text-info/80 mt-3">
         A passionate Full-Stack / MERN Stack Developer with a strong foundation

@@ -2,7 +2,10 @@ import React, { useState, useCallback } from "react";
 import { motion } from "framer-motion";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInfoCircle, faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import {
+  faInfoCircle,
+  faUpRightFromSquare,
+} from "@fortawesome/free-solid-svg-icons";
 import img1 from "../../../assets/courier.webp";
 import img2 from "../../../assets/food.webp";
 import img3 from "../../../assets/article.webp";
@@ -40,8 +43,8 @@ const ProjectCard = React.memo(({ project, index, onSelect }) => {
       />
 
       <div className="p-5 flex flex-col flex-grow">
-        <h3 className="text-xl text-neutral font-bold mb-2">{project.name}</h3>
-        <p className="mb-3 text-primary flex-grow line-clamp-2">
+        <h3 className="text-xl text-primary font-bold mb-2">{project.name}</h3>
+        <p className="mb-3 text-info flex-grow line-clamp-2">
           {project.description}
         </p>
 
@@ -142,7 +145,13 @@ const Projects = () => {
       id: "3",
       name: "Article Posting Platform",
       image: img3,
-      techStack: ["React", "TailwindCSS", "Framer Motion", "MongoDB", "Express.js"],
+      techStack: [
+        "React",
+        "TailwindCSS",
+        "Framer Motion",
+        "MongoDB",
+        "Express.js",
+      ],
       description:
         "A dynamic article posting platform where users can create, edit, and interact with blog articles.",
       liveLink: "https://assignment-11-49577.web.app/",
@@ -211,7 +220,7 @@ const Projects = () => {
   return (
     <section className="max-w-7xl mx-auto">
       <h2 className="text-4xl font-bold text-center mb-10">
-        Featured <span className="text-neutral">Projects</span>
+        Featured <span className="text-primary">Projects</span>
       </h2>
 
       <div className="grid gap-8 lg:grid-cols-3 sm:grid-cols-1 mx-2">
@@ -229,12 +238,12 @@ const Projects = () => {
       {selectedProject && (
         <dialog open className="modal">
           <motion.div
-            className="modal-box max-w-3xl"
+            className="modal-box max-w-3xl bg-secondary shadow-xl shadow-neutral/40"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <h3 className="text-2xl font-bold text-neutral mb-4">
+            <h3 className="text-2xl font-bold text-primary mb-4">
               {selectedProject.name}
             </h3>
             <img
@@ -243,16 +252,21 @@ const Projects = () => {
               loading="lazy"
               className="rounded-lg mb-4"
             />
-            <p className="text-primary mb-4">{selectedProject.description}</p>
+            <p className="text-info mb-4">{selectedProject.description}</p>
 
-            <h4 className="font-semibold mb-2">✨ Features:</h4>
-            <ul className="list-disc list-inside text-primary mb-4 space-y-1">
+            <h4 className="font-semibold mb-2 text-neutral"> Features:</h4>
+            <ul className="list-disc list-inside text-info mb-4 space-y-1">
               {selectedProject.features.map((f, i) => (
                 <li key={i}>{f}</li>
               ))}
             </ul>
 
-            <h4 className="font-semibold mb-2">🛠 Tech Stack:</h4>
+            <h4
+              className="font-semibold mb-2 text-neutral
+            "
+            >
+              Tech Stack:
+            </h4>
             <div className="flex flex-wrap gap-2 mb-4">
               {selectedProject.techStack.map((tech, i) => (
                 <span

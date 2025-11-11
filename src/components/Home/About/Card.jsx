@@ -34,7 +34,7 @@ const Card = () => {
       {data.map((d, index) => (
         <motion.div
           key={d.id}
-          className="shadow-xl shadow-primary/40 py-4 rounded-2xl text-center bg-accent border-l-4 border-neutral"
+          className="shadow-xl shadow-primary/40 py-4 rounded-2xl text-center bg-secondary border-l-4 border-neutral"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: index * 0.2, duration: 0.5, type: "spring" }}
