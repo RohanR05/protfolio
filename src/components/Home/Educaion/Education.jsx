@@ -36,26 +36,26 @@ const Education = () => {
   return (
     <section className="mx-auto">
       <h2 className="text-4xl font-bold mb-10 text-center">
-        Educational <span className="text-neutral">Qualification</span>
+        Educational <span className="text-primary">Qualification</span>
       </h2>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {educations.map((edu, idx) => (
           <motion.div
             key={idx}
-            className="bg-secondary rounded-xl p-6 shadow-xl shadow-primary/60 text-center border-l-4 border-neutral hover:border-primary"
+            className="bg-secondary rounded-xl p-6 shadow-xl shadow-neutral/20 text-center border-l-4 border-neutral hover:border-primary"
             variants={cardVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
             {edu.icon}
-            <h3 className="text-xl font-semibold mb-3 text-neutral">
+            <h3 className="text-xl font-semibold mb-3 text-primary">
               {edu.title}
             </h3>
-            <p className="text-primary mb-1">{edu.institution}</p>
+            <p className="text-info mb-1">{edu.institution}</p>
             {edu.year && (
-              <p className="text-primary">Year of Completion: {edu.year}</p>
+              <p className="text-info">Year of Completion: {edu.year}</p>
             )}
           </motion.div>
         ))}
