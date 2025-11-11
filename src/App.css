@@ -47,3 +47,14 @@ body {
 .animate-glowPulse {
   animation: glowPulse 3s ease-in-out infinite;
 }
+.text-fade-bottom {
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+  transition: mask-image 0.3s ease-in-out, -webkit-mask-image 0.3s ease-in-out;
+}
+
+/* For dark mode (DaisyUI applies [data-theme="dark"]) */
+[data-theme="dark"] .text-fade-bottom {
+  mask-image: linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,0));
+  -webkit-mask-image: linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,0));
+}

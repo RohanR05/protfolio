@@ -12,39 +12,43 @@ const Banner = () => {
   return (
     <div className="bg-gradient-to-l from-primary/0 to-neutral/0 text-accent flex flex-col md:flex-row items-center md:justify-between p-4 md:py-8">
       {/* Image */}
-<div className="flex-shrink-0 mb-6 md:mb-0">
-  <img
-    className="w-60 h-60 md:w-72 md:h-72 lg:w-96 lg:h-96 object-cover rounded-full animate-glowPulse"
-    src={img}
-    alt="Profile"
-  />
-</div>
-
+      <div className="flex-shrink-0 mb-6 md:mb-0">
+        <img
+          className="w-60 h-60 md:w-72 md:h-72 lg:w-96 lg:h-96 object-cover rounded-full animate-glowPulse"
+          src={img}
+          alt="Profile"
+        />
+      </div>
 
       {/* Text */}
-      <div className="md:ml-8 text-center md:text-left max-w-xl">
-        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-info">
-          Hi, I’m{" "}
-          <span className="text-3xl md:text-5xl text-neutral">
-            <Typewriter
-              words={["Rohan Kabir"]}
-              loop={0} // 0 = infinite loop
-              cursor
-              cursorStyle="|"
-              typeSpeed={150}
-              deleteSpeed={30}
-              delaySpeed={1500}
-            />
-          </span>
+      <div className="md:ml-8 text-center md:text-left max-w-4xl">
+        <h1 className="text-5xl md:text-7xl lg:text-9xl font-bold mb-4 md:mb-16 text-info text-fade-bottom">
+          Rohan Kabir
         </h1>
 
         <p className="text-2xl md:text-3xl font-semibold text-primary mb-3">
-          &lt; MERN Stack Developer /&gt;
+          &lt;
+          <span className="text-info">
+            <Typewriter
+              words={[
+                "MERN Stack Developer",
+                "Full Stack Developer",
+                "Front-End Developer",
+              ]}
+              loop={0} // infinite
+              cursor
+              cursorStyle="_"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1500}
+            />
+          </span>
+          /&gt;
         </p>
 
         <p className="text-lg mb-5 text-info">
           Passionate about building modern, scalable web applications with clean
-          UI ✨ and efficient backend architecture ⚡.
+          UI and efficient backend architecture.
         </p>
 
         {/* Social Icons */}
@@ -57,7 +61,7 @@ const Banner = () => {
               aria-label="Facebook"
             >
               <FontAwesomeIcon
-                className="border border-primary p-1.5 rounded-lg text-primary bg-neutral hover:bg-primary hover:text-neutral transition"
+                className="p-1.5 text-primary border border-primary rounded-lg hover:text-neutral hover:border-neutral hover:rotate-30 transition"
                 icon={faFacebook}
               />
             </a>
@@ -70,7 +74,7 @@ const Banner = () => {
               aria-label="GitHub"
             >
               <FontAwesomeIcon
-                className="border border-primary p-1.5 rounded-lg text-primary bg-neutral  hover:bg-primary hover:text-neutral transition"
+                className="p-1.5 text-primary border border-primary rounded-lg hover:text-neutral hover:border-neutral hover:rotate-30 transition"
                 icon={faGithub}
               />
             </a>
@@ -83,7 +87,7 @@ const Banner = () => {
               aria-label="LinkedIn"
             >
               <FontAwesomeIcon
-                className="border border-primary p-1.5 rounded-lg text-primary bg-neutral hover:bg-primary hover:text-neutral transition"
+                className="p-1.5 text-primary border border-primary rounded-lg hover:text-neutral hover:border-neutral hover:rotate-30 transition"
                 icon={faLinkedin}
               />
             </a>
@@ -96,13 +100,12 @@ const Banner = () => {
               aria-label="WhatsApp"
             >
               <FontAwesomeIcon
-                className="border border-primary p-1.5 rounded-lg text-primary bg-neutral hover:bg-primary hover:text-neutral transition"
+                className="p-1.5 text-primary border border-primary rounded-lg hover:text-neutral hover:border-neutral hover:rotate-30 transition"
                 icon={faWhatsapp}
               />
             </a>
           </li>
           <li>
-            {" "}
             <a
               href="https://drive.google.com/file/d/180oEGkCsjBwAmAoht8vH36QYI19XcP4M/view?usp=sharing"
               target="_blank"
@@ -113,8 +116,6 @@ const Banner = () => {
             </a>
           </li>
         </ul>
-
-        {/* Resume Button */}
       </div>
     </div>
   );
