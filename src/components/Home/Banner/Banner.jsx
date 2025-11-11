@@ -12,13 +12,14 @@ const Banner = () => {
   return (
     <div className="bg-gradient-to-l from-primary/0 to-neutral/0 text-accent flex flex-col md:flex-row items-center md:justify-between p-4 md:py-8">
       {/* Image */}
-      <div className="flex-shrink-0 mb-6 md:mb-0">
-        <img
-          className="w-60 h-60 md:w-72 md:h-72 lg:w-96 lg:h-96 object-cover rounded-full border-4 border-primary shadow-lg"
-          src={img}
-          alt="Profile"
-        />
-      </div>
+<div className="flex-shrink-0 mb-6 md:mb-0">
+  <img
+    className="w-60 h-60 md:w-72 md:h-72 lg:w-96 lg:h-96 object-cover rounded-full animate-glowPulse"
+    src={img}
+    alt="Profile"
+  />
+</div>
+
 
       {/* Text */}
       <div className="md:ml-8 text-center md:text-left max-w-xl">

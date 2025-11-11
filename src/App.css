@@ -35,3 +35,15 @@ body {
 .blink {
   animation: blink 1s infinite;
 }
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 35px var(--color-primary);
+  }
+  50% {
+    box-shadow: 0 0 35px var(--color-neutral);
+  }
+}
+
+.animate-glowPulse {
+  animation: glowPulse 3s ease-in-out infinite;
+}
