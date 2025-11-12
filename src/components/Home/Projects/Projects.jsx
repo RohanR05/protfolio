@@ -170,19 +170,18 @@ const Projects = () => {
       name: "Modern Job Portal",
       image: img4,
       techStack: [
-        "Next.js 13+",
-        "React",
+        "Next.js 15+",
         "TailwindCSS",
         "DaisyUI",
         "ShadCN UI",
         "NextAuth",
         "MongoDB",
-        "Node.js",
+        "Framer Motion",
       ],
       description:
         "A modern job portal where applicants can browse and apply for jobs, while HR or admins can post and manage listings.",
       liveLink: "https://job-portal-alpha-snowy.vercel.app/",
-      githubClient: "https://github.com/RohanR05/internNaki-",
+      githubClient: "https://intern-bangla.vercel.app/",
       features: [
         "Browse jobs with filtering by location, company, or type",
         "Detailed job descriptions with salary & benefits",
