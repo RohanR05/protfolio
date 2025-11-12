@@ -176,12 +176,12 @@ const Projects = () => {
         "ShadCN UI",
         "NextAuth",
         "MongoDB",
-        "Framer Motion",
+        "Framer Motion"
       ],
       description:
         "A modern job portal where applicants can browse and apply for jobs, while HR or admins can post and manage listings.",
-      liveLink: "https://job-portal-alpha-snowy.vercel.app/",
-      githubClient: "https://intern-bangla.vercel.app/",
+      liveLink: "https://intern-bangla.vercel.app/",
+      githubClient: "https://github.com/RohanR05/internNaki-",
       features: [
         "Browse jobs with filtering by location, company, or type",
         "Detailed job descriptions with salary & benefits",
