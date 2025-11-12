@@ -5,7 +5,11 @@ import { FaCode, FaCogs, FaDatabase, FaTools } from "react-icons/fa";
 const Skills = () => {
   const fadeUp = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.9, ease: "easeOut" },
+    },
   };
 
   const badgePop = {
@@ -55,6 +59,18 @@ const Skills = () => {
         {
           src: "https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white",
           alt: "Next.js",
+        },
+        {
+          src: "https://img.shields.io/badge/React_Router-CA4245?style=flat-square&logo=reactrouter&logoColor=white",
+          alt: "React Router",
+        },
+        {
+          src: "https://img.shields.io/badge/Express.js-000000?style=flat-square&logo=express&logoColor=white",
+          alt: "Express.js",
+        },
+        {
+          src: "https://img.shields.io/badge/TanStack_Query-FF4154?style=flat-square&logo=reactquery&logoColor=white",
+          alt: "TanStack Query",
         },
         {
           src: "https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwind-css&logoColor=white",
@@ -115,6 +131,14 @@ const Skills = () => {
         {
           src: "https://img.shields.io/badge/VSCode-007ACC?style=flat-square&logo=visual-studio-code&logoColor=white",
           alt: "VSCode",
+        },
+        {
+          src: "https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white",
+          alt: "Git",
+        },
+        {
+          src: "https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white",
+          alt: "GitHub",
         },
         {
           src: "https://img.shields.io/badge/Stripe-6772E5?style=flat-square&logo=stripe&logoColor=white",
