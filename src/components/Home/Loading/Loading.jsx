@@ -3,7 +3,7 @@ import sandyLoading from "../../../assets/Sandy Loading.json";
 
 const Loading = () => {
   return (
-    <div className="fixed inset-0 flex items-center justify-center backdrop-blur-lg bg-accent/10 z-50">
+    <div className="fixed inset-0 flex items-center justify-center backdrop-blur-md bg-primary/20 z-50">
       <Player
         autoplay
         loop
