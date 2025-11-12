@@ -10,7 +10,7 @@ body {
 @plugin "daisyui/theme" {
   name: "light";
   --color-primary: #24583C;
-  --color-secondary: #F8F8EC;
+  --color-secondary: #24583C10;
    --color-accent:#ffffff; 
    --color-neutral:#FF6B01;
    --color-info:#0f0f0f
@@ -20,7 +20,7 @@ body {
 @plugin "daisyui/theme" {
   name: "dark";
   --color-primary: #bfffff;
-  --color-secondary:#051622;
+  --color-secondary:#bfffff10;
    --color-accent:#000000;
    --color-neutral:#FFE900;
    --color-info:#f0f0f0

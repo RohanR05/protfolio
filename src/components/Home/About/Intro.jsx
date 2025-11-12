@@ -99,7 +99,7 @@ const Intro = () => {
 
   return (
     <div>
-      <h2 className="text-neutral font-bold text-center text-4xl mb-4">
+      <h2 className="text-primary font-bold text-center text-4xl mb-4">
         Some Info
       </h2>
 

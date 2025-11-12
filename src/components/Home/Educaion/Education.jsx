@@ -34,7 +34,7 @@ const Education = () => {
   ];
 
   return (
-    <section className="mx-auto">
+    <section className="mx-auto p-2 md:p-0">
       <h2 className="text-4xl font-bold mb-10 text-center">
         Educational <span className="text-primary">Qualification</span>
       </h2>
@@ -43,7 +43,7 @@ const Education = () => {
         {educations.map((edu, idx) => (
           <motion.div
             key={idx}
-            className="bg-secondary rounded-xl p-6 shadow-xl shadow-neutral/20 text-center border-l-4 border-neutral hover:border-primary"
+            className="bg-secondary rounded-xl p-6 shadow-xl shadow-primary/20 hover:shadow-primary/40 text-center border-l-4 border-primary"
             variants={cardVariants}
             initial="hidden"
             whileInView="visible"

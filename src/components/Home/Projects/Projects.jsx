@@ -28,7 +28,7 @@ const ProjectCard = React.memo(({ project, index, onSelect }) => {
   return (
     <motion.div
       key={project.id}
-      className="bg-secondary shadow-xl shadow-neutral/20 hover:shadow-primary/30 rounded-2xl overflow-hidden flex flex-col"
+      className="bg-secondary shadow-xl shadow-primary/20 hover:shadow-primary/30 rounded-2xl overflow-hidden flex flex-col m-2 md:m-0"
       initial="hidden"
       animate="visible"
       variants={variant}
@@ -53,13 +53,13 @@ const ProjectCard = React.memo(({ project, index, onSelect }) => {
           {project.techStack.slice(0, 3).map((tech, i) => (
             <span
               key={i}
-              className="bg-primary/10 text-neutral px-2 py-1 rounded text-xs font-medium"
+              className="bg-primary/10 text-primary px-2 py-1 rounded text-xs font-medium"
             >
               {tech}
             </span>
           ))}
           {project.techStack.length > 3 && (
-            <span className="bg-primary/20 text-neutral px-2 py-1 rounded text-xs font-medium">
+            <span className="bg-primary/20 text-primary px-2 py-1 rounded text-xs font-medium">
               +{project.techStack.length - 3} more
             </span>
           )}
@@ -238,7 +238,7 @@ const Projects = () => {
       {selectedProject && (
         <dialog open className="modal">
           <motion.div
-            className="modal-box max-w-3xl bg-secondary shadow-xl shadow-neutral/40"
+            className="modal-box max-w-3xl bg-accent shadow-xl shadow-neutral/40"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
@@ -254,7 +254,7 @@ const Projects = () => {
             />
             <p className="text-info mb-4">{selectedProject.description}</p>
 
-            <h4 className="font-semibold mb-2 text-neutral"> Features:</h4>
+            <h4 className="font-semibold mb-2 text-primary"> Features:</h4>
             <ul className="list-disc list-inside text-info mb-4 space-y-1">
               {selectedProject.features.map((f, i) => (
                 <li key={i}>{f}</li>
@@ -262,7 +262,7 @@ const Projects = () => {
             </ul>
 
             <h4
-              className="font-semibold mb-2 text-neutral
+              className="font-semibold mb-2 text-primary
             "
             >
               Tech Stack:
@@ -271,7 +271,7 @@ const Projects = () => {
               {selectedProject.techStack.map((tech, i) => (
                 <span
                   key={i}
-                  className="bg-primary text-secondary px-2 py-1 rounded text-sm font-medium"
+                  className="bg-primary/20 text-primary px-2 py-1 rounded text-sm font-medium"
                 >
                   {tech}
                 </span>

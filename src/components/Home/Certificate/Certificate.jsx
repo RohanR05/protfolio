@@ -34,7 +34,7 @@ const Certificate = () => {
         <motion.div
           whileHover={{ scale: 1.03 }}
           transition={{ type: "spring", stiffness: 200 }}
-          className="card bg-secondary shadow-xl shadow-neutral/30 border border-primary/20 hover:shadow-primary/30 transition-all duration-300"
+          className="card bg-secondary shadow-xl shadow-primary/30 border border-primary/20 hover:shadow-primary/50 transition-all duration-300"
         >
           <figure className="px-4 pt-4">
             <motion.img
@@ -60,7 +60,7 @@ const Certificate = () => {
         <motion.div
           whileHover={{ scale: 1.03 }}
           transition={{ type: "spring", stiffness: 200 }}
-          className="card bg-secondary shadow-xl shadow-neutral/30 border border-secondary/40 hover:shadow-primary/30 transition-all duration-300"
+          className="card bg-secondary shadow-xl shadow-primary/30 border border-secondary/40 hover:shadow-primary/50 transition-all duration-300"
         >
           <figure className="px-4 pt-4">
             <motion.img
@@ -89,7 +89,7 @@ const Certificate = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
         viewport={{ once: true }}
-        className="mt-12 text-center text-primary"
+        className="mt-12 text-center text-info font-medium"
       >
         “Hard work pays off — this is just the beginning.”
       </motion.p>

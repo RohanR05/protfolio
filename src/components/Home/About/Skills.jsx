@@ -150,14 +150,14 @@ const Skills = () => {
 
   return (
     <div>
-      <h2 className="text-4xl font-bold mb-8 text-neutral text-center">
+      <h2 className="text-4xl font-bold mb-8 text-primary text-center">
         My Skills
       </h2>
 
       {sections.map((section, idx) => (
         <motion.div
           key={idx}
-          className="mb-8 bg-secondary py-8 px-4 rounded-2xl shadow-xl shadow-neutral/20 border border-primary/20 hover:border-primary/40"
+          className="mb-8 bg-secondary py-8 px-4 rounded-2xl shadow-xl shadow-primary/20 border border-primary/30 hover:border-primary/60"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}

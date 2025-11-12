@@ -32,7 +32,7 @@ export default function Theme() {
   return (
     <button
       onClick={toggleTheme}
-      className="btn btn-ghost btn-circle bg-secondary border-neutral"
+      className="btn btn-ghost btn-circle bg-secondary border-primary"
       aria-label="Toggle Theme"
     >
       {theme === "light" ? (

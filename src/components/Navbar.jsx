@@ -62,7 +62,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="fixed top-0 w-full z-50 backdrop-blur-md bg-accent/40 shadow-sm">
+    <div className="fixed top-0 w-full z-50 backdrop-blur-md bg-accent/40 shadow-sm shadow-info/20">
       <div className="navbar mx-auto px-4 lg:px-8">
         {/* Navbar Start */}
         <div className="navbar-start">

@@ -39,18 +39,18 @@ const Testimonial = () => {
   return (
     <section className="max-w-7xl mx-auto text-center">
       <h2 className="text-4xl font-bold mb-3">
-        Client <span className="text-neutral">Testimonials</span>
+        Client <span className="text-primary">Testimonials</span>
       </h2>
       <p className="mb-10">
         Feedback from courses, freelance clients, open source projects, and
         personal work
       </p>
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 p-2 md:p-0">
         {testimonials.map((item, index) => (
           <motion.div
             key={item.id}
-            className="bg-secondary p-5 rounded-2xl  shadow-primary/40 shadow-xl flex hover:shadow-neutral/40 flex-col items-center cursor-pointer border-l-4 border-neutral"
+            className="bg-secondary p-5 rounded-2xl  shadow-primary/20 shadow-xl flex hover:shadow-primary/50 flex-col items-center cursor-pointer border-l-4 border-primary"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -66,7 +66,7 @@ const Testimonial = () => {
                 className="text-4xl text-primary mb-3"
               />
             </motion.div>
-            <h3 className="text-xl font-bold text-neutral">{item.title}</h3>
+            <h3 className="text-xl font-bold text-info">{item.title}</h3>
             <p className="text-primary font-bold text-2xl">
               {item.description}
             </p>

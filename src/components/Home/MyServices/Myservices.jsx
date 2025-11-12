@@ -127,7 +127,7 @@ const Myservices = () => {
         {data.map((service) => (
           <motion.div
             key={service.id}
-            className="bg-secondary p-5 rounded-2xl shadow-xl shadow-neutral/20 cursor-pointer hover:scale-105 hover:shadow-primary/20 transition overflow-hidden group"
+            className="bg-secondary p-5 rounded-2xl shadow-xl shadow-primary/20 cursor-pointer hover:scale-105 hover:shadow-primary/50 transition overflow-hidden group"
           >
             {/* Icon */}
             <motion.div
