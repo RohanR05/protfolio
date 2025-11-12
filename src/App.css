@@ -40,7 +40,7 @@ body {
     box-shadow: 0 0 35px var(--color-primary);
   }
   50% {
-    box-shadow: 0 0 35px var(--color-neutral);
+    box-shadow: 0 0 35px var(--color-accent);
   }
 }
 

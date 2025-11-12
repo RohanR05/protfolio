@@ -113,7 +113,7 @@ const Navbar = () => {
             href="https://drive.google.com/file/d/1pQNXuHtsJMpAC9OUGX-KrdKq5tHJrnCm/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn border-secondary hidden md:inline-block bg-gradient-to-r from-info to-neutral text-accent font-bold px-6 py-2 rounded-lg shadow-md hover:from-primary hover:to-info transition duration-300"
+            className="btn border-secondary hidden md:inline-block bg-gradient-to-r from-info to-primary text-accent font-bold px-6 py-2 rounded-lg shadow-md hover:from-primary hover:to-info transition duration-300"
           >
             Resume
           </a>
