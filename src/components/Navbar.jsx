@@ -88,7 +88,7 @@ const Navbar = () => {
               </svg>
             </button>
             {menuOpen && (
-              <ul className="menu menu-compact dropdown-content mt-2 p-4 shadow bg-secondary rounded-lg w-52 absolute">
+              <ul className="menu menu-compact dropdown-content mt-2 p-4 shadow bg-accent/90 backdrop-blur-md rounded-lg w-52 absolute">
                 {links}
               </ul>
             )}

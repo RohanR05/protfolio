@@ -26,7 +26,7 @@ const Banner = () => {
           Rohan Kabir
         </h1>
 
-        <p className="text-2xl md:text-3xl text-center font-semibold text-primary mb-3">
+        <p className="text-xl md:text-3xl text-center font-semibold text-primary mb-3">
           &lt;
           <span className="text-info">
             <Typewriter
@@ -110,7 +110,7 @@ const Banner = () => {
               href="https://drive.google.com/file/d/1pQNXuHtsJMpAC9OUGX-KrdKq5tHJrnCm/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn border-secondary hidden md:inline-block bg-gradient-to-r from-info to-primary text-accent font-bold px-6 py-2 rounded-lg shadow-md hover:from-primary hover:to-info transition duration-300"
+              className="btn border-secondary  bg-gradient-to-r from-info to-primary text-accent font-bold px-6 py-2 rounded-lg shadow-md hover:from-primary hover:to-info transition duration-300"
             >
               Resume
             </a>
