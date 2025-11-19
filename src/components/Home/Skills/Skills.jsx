@@ -7,17 +7,17 @@ const Skills = () => {
         My Skills
       </h2>
 
-      {/* Languages */}
+      {/* Front-End Development */}
       <div className="mb-8">
         <h3
           className="text-2xl font-semibold mb-2"
           style={{ color: "#24583C" }}
         >
-          📝 Languages
+          🎨 Front-End Development
         </h3>
         <p className="mb-4 text-gray-700 dark:text-gray-300 max-w-xl">
-          These are the core programming languages I use to build the foundation
-          of my projects.
+          These are the technologies I use to build modern, responsive, and
+          interactive user interfaces.
         </p>
         <div className="flex flex-wrap gap-3">
           <img
@@ -32,6 +32,18 @@ const Skills = () => {
             src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"
             alt="JavaScript"
           />
+          <img
+            src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwind-css&logoColor=white"
+            alt="Tailwind CSS"
+          />
+          <img
+            src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black"
+            alt="React"
+          />
+          <img
+            src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white"
+            alt="Next.js"
+          />
         </div>
       </div>
 
@@ -44,18 +56,10 @@ const Skills = () => {
           ⚙️ Frameworks & Libraries
         </h3>
         <p className="mb-4 text-gray-700 dark:text-gray-300 max-w-xl">
-          Tools and libraries I use to build interactive UIs, handle data
-          fetching, and style my applications.
+          Tools and libraries I use to extend functionality, handle data
+          fetching, and style applications.
         </p>
         <div className="flex flex-wrap gap-3">
-          <img
-            src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black"
-            alt="React"
-          />
-          <img
-            src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwind-css&logoColor=white"
-            alt="Tailwind CSS"
-          />
           <img
             src="https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white"
             alt="Express.js"
@@ -84,8 +88,8 @@ const Skills = () => {
           🗄️ Backend & Database
         </h3>
         <p className="mb-4 text-gray-700 dark:text-gray-300 max-w-xl">
-          Backend technologies and databases I use to build APIs, handle
-          authentication, and manage data storage.
+          Backend technologies and databases I use to build APIs, authentication, 
+          and manage data storage.
         </p>
         <div className="flex flex-wrap gap-3">
           <img
@@ -120,8 +124,8 @@ const Skills = () => {
           🛠️ Tools & Others
         </h3>
         <p className="mb-4 text-gray-700 dark:text-gray-300 max-w-xl">
-          Development tools, payment gateways, icon fonts, and animations that
-          enhance my development workflow and project quality.
+          Development tools, payment gateways, utilities, and other technologies
+          that improve my workflow.
         </p>
         <div className="flex flex-wrap gap-3">
           <img

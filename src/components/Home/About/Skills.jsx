@@ -22,11 +22,11 @@ const Skills = () => {
       title: (
         <>
           <FaCode className="inline-block mr-2 text-primary" />
-          Languages
+          Frontend Development
         </>
       ),
       description:
-        "These are the core programming languages I use to build the foundation of my projects.",
+        "Technologies and tools I use to build responsive and interactive user interfaces.",
       badges: [
         {
           src: "https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white",
@@ -40,8 +40,21 @@ const Skills = () => {
           src: "https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black",
           alt: "JavaScript",
         },
+        {
+          src: "https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwind-css&logoColor=white",
+          alt: "Tailwind CSS",
+        },
+        {
+          src: "https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black",
+          alt: "React",
+        },
+        {
+          src: "https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white",
+          alt: "Next.js",
+        },
       ],
     },
+
     {
       title: (
         <>
@@ -53,14 +66,6 @@ const Skills = () => {
         "Tools and libraries I use to build interactive UIs, handle data fetching, and style my applications.",
       badges: [
         {
-          src: "https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black",
-          alt: "React",
-        },
-        {
-          src: "https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white",
-          alt: "Next.js",
-        },
-        {
           src: "https://img.shields.io/badge/React_Router-CA4245?style=flat-square&logo=reactrouter&logoColor=white",
           alt: "React Router",
         },
@@ -71,10 +76,6 @@ const Skills = () => {
         {
           src: "https://img.shields.io/badge/TanStack_Query-FF4154?style=flat-square&logo=reactquery&logoColor=white",
           alt: "TanStack Query",
-        },
-        {
-          src: "https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwind-css&logoColor=white",
-          alt: "Tailwind CSS",
         },
         {
           src: "https://img.shields.io/badge/shadcn/ui-000000?style=flat-square&logo=shadcnui&logoColor=white",
@@ -90,6 +91,7 @@ const Skills = () => {
         },
       ],
     },
+
     {
       title: (
         <>
@@ -118,6 +120,7 @@ const Skills = () => {
         },
       ],
     },
+
     {
       title: (
         <>
@@ -187,7 +190,7 @@ const Skills = () => {
           viewport={{ once: true }}
           variants={fadeUp}
         >
-          <h3 className="text-2xl font-semibold mb-2 text-primary">
+          <h3 className="text-2xl font-semibold mb-2 text-info">
             {section.title}
           </h3>
           <p className="mb-4 text-info max-w-xl">{section.description}</p>

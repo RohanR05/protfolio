@@ -11,7 +11,7 @@ const Card = () => {
     },
     {
       id: "2",
-      number: "4+",
+      number: "7+",
       title: "Projects Completed",
       icon: "📁",
     },

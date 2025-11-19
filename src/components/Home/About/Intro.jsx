@@ -113,7 +113,7 @@ const Intro = () => {
             viewport={{ once: true }}
             variants={isMobile ? simpleFade : fadeUp}
           >
-            <h3 className="text-3xl font-semibold mb-3 text-primary flex items-center gap-2">
+            <h3 className="text-3xl font-semibold mb-3 text-info flex items-center gap-2">
               <FontAwesomeIcon icon={section.icon} className="text-primary" />
               {section.title}
             </h3>
